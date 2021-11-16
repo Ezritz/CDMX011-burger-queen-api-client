@@ -1,18 +1,17 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './pages/Login';
-import Home from './pages/Home';
+import Login from './components/Login';
+import Home from './components/Home';
 
 //pages y components
 
 function AppRoutes() {
   return (
     <div className="App">
-      <h1>Burger Queen</h1>
       
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Login/>}/>
-          <Route exact path="/home" element={<Home/>}/>
+          <Route exact path="/orders" element={<Home/>}/>
         </Routes>
         
       </BrowserRouter>
