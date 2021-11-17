@@ -10,8 +10,9 @@ function AppRoutes() {
       
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Login/>}/>
           <Route exact path="/orders" element={<Home/>}/>
+          <Route exact path="/" element={<Login/>}/>
+          
         </Routes>
         
       </BrowserRouter>

@@ -9,6 +9,7 @@ import myImage from '../images/Logo.png';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  let [error, setError] = useState('');
 
   const navigate = useNavigate();
 
@@ -19,9 +20,12 @@ const Login = () => {
         navigate('/orders');
         console.log('Login exitoso')
       })
-      .catch((err) => console.log('error', err.message))
+      .catch((err) => {
+        setError(err.message)
+      })
   }
   
+  console.log('setError',setError)
   return(
     <div id='container'>
       <div id='container-img'>
@@ -31,7 +35,7 @@ const Login = () => {
       <div id='container-form' className= {styles['']}>
         <form onSubmit={loginUser}>
 
-          <label className = 'label-1' htmlFor="">
+          <label className = 'label-1' htmlFor="inputEmail">
             <span>E-mail:</span>
             
           </label>
@@ -43,7 +47,7 @@ const Login = () => {
             id="inputEmail">
           </input>
           <br/>
-          <label htmlFor="" className='label-2'>
+          <label htmlFor="inputPassword" className='label-2'>
             <span>Contraseña:</span>
             
           </label>
@@ -54,6 +58,8 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             id="inputPassword">
           </input>
+          {error && <p>{error}</p>}
+          <p></p>
           <br/>
           <button 
           className='btn'
