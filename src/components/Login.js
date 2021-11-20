@@ -1,31 +1,20 @@
 import styles from '../css/Login.scss';
 import React,{useState} from 'react';
-import auth from '../firebase/config';
-import {useNavigate} from 'react-router-dom';
+import { useLogin } from '../hooks/useLogin';
 import myImage from '../images/Logo.png';
 
 // import {useState} from 'react';
 
-const Login = () => {
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  let [error, setError] = useState('');
-
-  const navigate = useNavigate();
-
-  const loginUser = (e) => {
+  const { logIn, error, isPending } = useLogin();
+  
+  const handleSubmit = (e) => {
     e.preventDefault();
-    auth.signInWithEmailAndPassword(email,password)
-      .then(() => {
-        navigate('/orders');
-        console.log('Login exitoso')
-      })
-      .catch((err) => {
-        setError(err.message)
-      })
+    logIn(email,password);
   }
   
-  console.log('setError',setError)
   return(
     <div id='container'>
       <div id='container-img'>
@@ -33,7 +22,7 @@ const Login = () => {
         <img src={myImage} alt='logo BQ'/>
       </div>
       <div id='container-form' className= {styles['']}>
-        <form onSubmit={loginUser}>
+        <form onSubmit={handleSubmit}>
 
           <label className = 'label-1' htmlFor="inputEmail">
             <span>E-mail:</span>
@@ -44,6 +33,7 @@ const Login = () => {
             className='input-1'
             type="email"
             onChange={(e) => setEmail(e.target.value)}
+            value={email}
             id="inputEmail">
           </input>
           <br/>
@@ -56,14 +46,16 @@ const Login = () => {
             className='input-2'
             type="password"
             onChange={(e) => setPassword(e.target.value)}
+            value={password}
             id="inputPassword">
           </input>
           {error && <p>{error}</p>}
           <p></p>
           <br/>
-          <button 
+          {!isPending && <button 
           className='btn'
-          >Iniciar Sesion</button>
+          >Iniciar Sesion</button>}
+          {isPending && <button className='btn' disabled>Cargando</button>}
 
         </form>
       </div>
@@ -71,5 +63,3 @@ const Login = () => {
     </div>
   )
 }
-
-export default Login;
