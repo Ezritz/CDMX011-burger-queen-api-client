@@ -1,5 +1,6 @@
 // import {initializeApp} from 'firebase/app'
 import firebase from 'firebase/app';
+import 'firebase/firestore';
 import 'firebase/auth';
 
 // import {getAuth, signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth';
@@ -15,12 +16,10 @@ const firebaseConfig = {
 };
 
 //init firebase
-const fire = firebase.initializeApp(firebaseConfig);
-const auth = fire.auth();
-
+firebase.initializeApp(firebaseConfig);
 
 //init services
-// const projectFirestore = firebase.firestore();
-// const projectAuth = firebase.auth();
+const projectFirestore = firebase.firestore();
+const projectAuth = firebase.auth();
 
-export default auth;
+export { projectFirestore, projectAuth }
