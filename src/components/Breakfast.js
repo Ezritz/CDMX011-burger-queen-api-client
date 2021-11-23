@@ -1,23 +1,10 @@
 import '../css/orders/Breakfast.scss';
-import BreakfastMenu from './BreakfastMenu';
 import menu from '../data';
 import DrinksBreakfast from './DrinksBreakfast';
+import Sandwich from './Sandwich';
 
 let menuArray = menu.filter((elem)=> elem.type === 'Sandwich');
   
-let drinksBreak = menu.filter((elem) => elem.type === 'Bebida-desayuno');
-
-let menuFood = menuArray.map((element) => {
-  console.log('img',element.img);
-  let imgs = element.img
-  return <BreakfastMenu image={imgs} text={element.description + " " + element.Price} id={"image-food"}/>
-})
-
-let menuDrinks = drinksBreak.map((element, index) => {
-  return <BreakfastMenu image={element.img} text={element.description + " " + element.Price} id={"image-drinks"}/>
-})
-
-
 console.log('hlis',menuArray);
 
 export default function Breakfast () {
@@ -48,7 +35,7 @@ export default function Breakfast () {
       
       <div>
         <p>Sandwich</p>
-        {menuFood}
+        <Sandwich />
         
       </div>
       <DrinksBreakfast />
