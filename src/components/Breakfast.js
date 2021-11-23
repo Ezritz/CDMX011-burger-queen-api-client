@@ -1,8 +1,24 @@
-import coffee from '../images/coffee.png';
-import coffeeM  from '../images/coffee-mug.png';
-import juice from '../images/orange-juice (1).png';
-import sandwich from '../images/sandwich.png';
-import styles from '../css/orders/Breakfast.scss';
+import '../css/orders/Breakfast.scss';
+import BreakfastMenu from './BreakfastMenu';
+import menu from '../data';
+
+let menuArray = menu.filter((elem)=> elem.type === 'Sandwich');
+  
+let drinksBreak = menu.filter((elem) => elem.type === 'Bebida-desayuno');
+
+let menuFood = menuArray.map((element) => {
+  console.log('img',element.img);
+  let imgs = element.img
+  return <BreakfastMenu image={imgs} text={element.description + " " + element.Price} id={"image-food"}/>
+})
+
+let menuDrinks = drinksBreak.map((element, index) => {
+  return <BreakfastMenu image={element.img} text={element.description + " " + element.Price} id={"image-drinks"}/>
+})
+
+
+console.log('hlis',menuArray);
+
 export default function Breakfast () {
   
   return (
@@ -28,24 +44,15 @@ export default function Breakfast () {
           <p>$0</p>
         </tr>
       </div>
-
+      
       <div>
         <p>Sandwich</p>
-        <img src={sandwich} alt="sandwich" className="imgs"/>
-        <button>+</button>
-        <button>-</button>
+        {menuFood}
+        
       </div>
       <div className = "drinks">
         <p>Bebidas</p>
-        <img src={coffee} alt="coffee" className="imgs"/>
-        <button className="btns-food">+</button>
-        <button className="btns-food">-</button>
-        <img src={coffeeM} alt="coffeeMilk" className="imgs"/>
-        <button className="btns-food">+</button>
-        <button className="btns-food">-</button>
-        <img src={juice} alt="juice" className="imgs"/>
-        <button className="btns-food">+</button>
-        <button className="btns-food">-</button>
+        {menuDrinks}
       </div>
     </div>
 
