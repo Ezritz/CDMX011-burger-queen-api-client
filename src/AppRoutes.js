@@ -34,6 +34,7 @@ function AppRoutes() {
     <div className="App">
       {authIsReady && (
         <BrowserRouter>
+          
           <Routes>
             <Route 
               path="/orders" 

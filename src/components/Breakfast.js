@@ -1,16 +1,14 @@
-import Orders from './Orders';
 import coffee from '../images/coffee.png';
 import coffeeM  from '../images/coffee-mug.png';
 import juice from '../images/orange-juice (1).png';
 import sandwich from '../images/sandwich.png';
-
+import styles from '../css/orders/Breakfast.scss';
 export default function Breakfast () {
-  const order = Orders();
   
   return (
     <div className="comanda">
       <p>Comanda</p>
-      <input type="text" placeholder="Nombre Cliente"></input>
+      <input type="text" placeholder="Nombre Cliente" className="client-name"></input>
       <div>
         <table>
           <thead>
@@ -33,18 +31,24 @@ export default function Breakfast () {
 
       <div>
         <p>Sandwich</p>
-        <img src={sandwich} alt="sandwich"/>
+        <img src={sandwich} alt="sandwich" className="imgs"/>
         <button>+</button>
         <button>-</button>
       </div>
-      <div>
+      <div className = "drinks">
         <p>Bebidas</p>
-        <img src={coffee} alt="coffee"/>
-        <img src={coffeeM} alt="coffeeMilk"/>
-        <img src={juice} alt="juice"/>
-        <button>+</button>
-        <button>-</button>
+        <img src={coffee} alt="coffee" className="imgs"/>
+        <button className="btns-food">+</button>
+        <button className="btns-food">-</button>
+        <img src={coffeeM} alt="coffeeMilk" className="imgs"/>
+        <button className="btns-food">+</button>
+        <button className="btns-food">-</button>
+        <img src={juice} alt="juice" className="imgs"/>
+        <button className="btns-food">+</button>
+        <button className="btns-food">-</button>
       </div>
     </div>
+
+    
   )
 }
