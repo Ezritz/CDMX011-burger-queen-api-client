@@ -1,6 +1,7 @@
 import '../css/orders/Breakfast.scss';
 import BreakfastMenu from './BreakfastMenu';
 import menu from '../data';
+import DrinksBreakfast from './DrinksBreakfast';
 
 let menuArray = menu.filter((elem)=> elem.type === 'Sandwich');
   
@@ -50,10 +51,7 @@ export default function Breakfast () {
         {menuFood}
         
       </div>
-      <div className = "drinks">
-        <p>Bebidas</p>
-        {menuDrinks}
-      </div>
+      <DrinksBreakfast />
     </div>
 
     
