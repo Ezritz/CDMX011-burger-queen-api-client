@@ -3,3 +3,20 @@ p {
   font-size: 28px;
   margin: 0;
 }
+.sandwiches{
+    // text-align: center;
+    display: flex;
+    margin: 5% 2% ;
+    flex-direction: column;
+    // flex-wrap: nowrap;
+    // justify-content: center;
+    // align-items: center;
+    // gap: 20px;
+    
+    p{
+      font-family: 'Rum Raisin', sans-serif;
+      font-size: 28px;
+      margin:0;
+    }
+     
+}

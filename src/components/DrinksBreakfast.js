@@ -9,7 +9,7 @@ export default function drinksBreakfast() {
     });
 
     return (
-        <div className="drinks">
+        <div className="drinks-1">
             <p>Bebidas:</p>
             {menuDrinks}
         </div>

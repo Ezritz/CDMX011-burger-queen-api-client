@@ -5,7 +5,11 @@ $color-background: #DFDBDB;
 $color-text: #DE333F;
 $color-background-comanda: #CAD6E3;
 .comanda {
-    margin: 10% 5%;
+    margin: 5% 5%;
+}
+.title-comanda {
+    text-align: left;
+    text-indent: 110px;
 }
 #client-name {
     width: 307px;
@@ -50,5 +54,5 @@ th{
     border:none;
     border-radius: 20px;
     text-align: center;
-    margin: 3%;
+    margin: 4% 20% ;
 }

@@ -1,20 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap');
 
-.drinks{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    p{
-      font-family: 'Rum Raisin', sans-serif;
-      font-size: 28px;
-      margin:0;
-    }
-    
+.drinks-1{
+  /*
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  p{
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: 28px;
+    margin:0;
+  }
+  */
+  
+  
+  display: flex;
+  margin: 3% 2% ;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  p{
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: 28px;
+    margin:0;
+  }
+  
 }
 
 
