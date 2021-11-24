@@ -5,7 +5,11 @@ $color-background: #DFDBDB;
 $color-text: #DE333F;
 $color-background-comanda: #CAD6E3;
 .comanda {
-    margin: 5% 5%;
+    p {
+        font-family: "Rum Raisin", sans-serif;
+        font-size: 28px;
+        margin: auto;
+    }
 }
 .title-comanda {
     text-align: left;
@@ -18,7 +22,7 @@ $color-background-comanda: #CAD6E3;
     font-size: 20px;
     border-radius: 20px;
     background-color: $color-background;
-    margin: 4px auto 40px;
+    margin: 20px auto 40px;
     text-align: center;
     border: none;
 }

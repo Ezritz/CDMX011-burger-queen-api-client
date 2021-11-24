@@ -13,7 +13,9 @@ export default function Sandwich() {
   return (
     <div className="sandwiches">
       <p>Sandwiches:</p>
-      {menuFood}
+      <div className='sandwichito'>
+        {menuFood}
+      </div>
     </div>
   )
 }
