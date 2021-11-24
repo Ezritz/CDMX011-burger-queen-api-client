@@ -1,22 +1,27 @@
-p {
-  font-family: "Rum Raisin", sans-serif;
-  font-size: 28px;
-  margin: 0;
-}
+
 .sandwiches{
     // text-align: center;
     display: flex;
-    margin: 5% 2% ;
+    //margin: 5% 2% ;
     flex-direction: column;
     // flex-wrap: nowrap;
-    // justify-content: center;
-    // align-items: center;
-    // gap: 20px;
-    
-    p{
-      font-family: 'Rum Raisin', sans-serif;
+    justify-content: center;
+    align-items: start;
+    text-align: center;
+    gap: 20px;
+    p {
+      font-family: "Rum Raisin", sans-serif;
       font-size: 28px;
-      margin:0;
+      margin: auto;
     }
+   
      
 }
+.sandwichito{
+  p{
+      font-family: 'Hind Madurai', sans-serif;
+        font-size: 20px;
+      margin:0;
+    }
+}
+ 
