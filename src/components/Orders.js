@@ -14,43 +14,45 @@ export default function Orders() {
   const [activeMenu, setActiveMenu] = useState('');
   // const [showBreakf, setShowBreakf] = useState(false);
   // const onClick = () => setShowBreakf(true);
-  return(
-    
+  return (
+
     <div className="container">
-      
+
       <div className="header">
-        <img src={myImage} alt="img-waiter" className="user"/>
-        <div>
-          <p></p>
-          <button onClick={logout}>Cerrar Sesión</button>
-          
+        <img src={myImage} alt="img-waiter" className="user" />
+        <div className='cont-name-btn'>
+          <p>Juanita</p>
+          <button className='btn-logout' onClick={logout}>Cerrar Sesión</button>
+
         </div>
         <div className="cont-ntf">
-          <img src={notification} alt="img-notification" className="ntf"/>
+          <img src={notification} alt="img-notification" className="ntf" />
         </div>
-        
-        <button 
-        type="button"
-        onClick={() => setActiveMenu('breakfast')}>
-        Desayuno</button>
-        
+
         <button
-        type="button"
-        onClick={() => setActiveMenu('lunch')}>
-        Almuerzo y Cena</button>
-       
-        <div>
-          {activeMenu === 'breakfast' && (
-            <Breakfast/>
-          )}
-          {activeMenu === 'lunch' && (
-            <Lunch/>
-          )}
-        </div>
-        
+          className='btn-breakfast'
+          type="button"
+          onClick={() => setActiveMenu('breakfast')}>
+          Desayuno</button>
+
+        <button
+          className='btn-lunch'
+          type="button"
+          onClick={() => setActiveMenu('lunch')}>
+          Almuerzo y Cena</button>
       </div>
-      
+      <div>
+        {activeMenu === 'breakfast' && (
+          <Breakfast />
+        )}
+        {activeMenu === 'lunch' && (
+          <Lunch />
+        )}
+      </div>
+
+
+
     </div>
-    
+
   )
 }
