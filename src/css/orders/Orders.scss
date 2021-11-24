@@ -43,7 +43,10 @@ $shadow-btn: 4px 4px 4px rgba(0, 0, 0, 0.25);
     color: #7A3F25;
     box-shadow: $shadow-btn;
 }
-
+.btn-lunch:active, .btn-logout:active, .btn-breakfast:active {
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: translateY(3px);
+}
 .btn-logout{
     width: 145px;
     height: 40px;
@@ -63,6 +66,13 @@ $shadow-btn: 4px 4px 4px rgba(0, 0, 0, 0.25);
 .user{
     width: 90px;
     height: 90px;
+}
+.vista-perm {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 2% 2%;
 }
 
 
