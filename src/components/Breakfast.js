@@ -13,7 +13,7 @@ export default function Breakfast () {
   
   return (
     <div className="components">
-      <Comanda />
+      
       <Sandwich />
       <DrinksBreakfast />
     </div>

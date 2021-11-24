@@ -4,6 +4,7 @@ import myImage from '../images/logoMesero.png';
 import notification from '../images/notification.png';
 import Breakfast from './Breakfast';
 import Lunch from './Lunch';
+import Comanda from './Comanda';
 import '../css/orders/Orders.scss';
 
 // import { useState } from 'react';
@@ -41,7 +42,8 @@ export default function Orders() {
           onClick={() => setActiveMenu('lunch')}>
           Almuerzo y Cena</button>
       </div>
-      <div>
+      <div className="vista-perm">
+        <Comanda />
         {activeMenu === 'breakfast' && (
           <Breakfast />
         )}
