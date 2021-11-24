@@ -6,6 +6,11 @@ export default [{
     Price: "$10",
     img: "https://i.ibb.co/qW0DsLr/sandwich.png"
 },
+{type: "Sandwich",
+    description: "Pollo",
+    Price: "$15",
+    img: "https://i.ibb.co/qW0DsLr/sandwich.png"
+},
 {
     type: "Bebida-desayuno",
     description: "Cafe Americano",
