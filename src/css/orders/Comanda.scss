@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap');
+
+$color-background: #DFDBDB;
+$color-text: #DE333F;
+$color-background-comanda: #CAD6E3;
+.comanda {
+    margin: 10% 5%;
+}
+#client-name {
+    width: 307px;
+    height: 43px;
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: $color-background;
+    margin: 4px auto 40px;
+    text-align: center;
+    border: none;
+}
+#total-products {
+    display: flex;
+    background-color: $color-background;
+    border-radius: 15px;
+    width: 307px;
+    height: 362px;
+    flex-direction: column;
+}
+table {
+    width: 90%;
+    
+}
+th{
+    color:$color-text;
+    font-family:'Hind Madurai', sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+.total {
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+.btn-comanda {
+    background-color: $color-background-comanda;
+    width: 165px;
+    height: 40px;
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: 22px;
+    border:none;
+    border-radius: 20px;
+    text-align: center;
+    margin: 3%;
+}

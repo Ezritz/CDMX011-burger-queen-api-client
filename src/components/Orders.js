@@ -4,7 +4,7 @@ import myImage from '../images/logoMesero.png';
 import notification from '../images/notification.png';
 import Breakfast from './Breakfast';
 import Lunch from './Lunch';
-import styles from '../css/orders/Orders.scss';
+import '../css/orders/Orders.scss';
 
 // import { useState } from 'react';
 
