@@ -1,4 +1,4 @@
-import '../css/orders/Breakfast.scss'
+import '../css/orders/BreakfastMenuBox.scss'
 export default function BreakfastMenu(props) {
     
   return (
@@ -8,7 +8,7 @@ export default function BreakfastMenu(props) {
       </div>
       <button className="add">+</button>
       <button className="sust">-</button>
-      <p>{props.text}</p>
+      <p className='name-text'>{props.text}</p>
     </div>
   )
 }
