@@ -7,7 +7,7 @@ export default function Sandwich() {
   let menuFood = sandwich.map((element) => {
     console.log('img',element.img);
     let imgs = element.img
-    return <BreakfastMenu image={imgs} text={element.description + " " + element.Price} id={"image-food"}/>
+    return <BreakfastMenu image={imgs} text={element.description + " " + element.Price} id={"image-food"} width={'50px'}/>
   })
 
   return (

@@ -4,6 +4,8 @@
 $color-background: #DFDBDB;
 $color-text: #DE333F;
 $color-background-comanda: #CAD6E3;
+$shadow-btn: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
 .comanda {
     display: flex;
     justify-content: center;
@@ -25,6 +27,11 @@ $color-background-comanda: #CAD6E3;
         border-radius: 20px;
         text-align: center;
         margin: auto;
+        box-shadow: $shadow-btn;
+    }
+    .btn-comanda:active{
+        box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+        transform: translateY(3px);
     }
 }
 .title-comanda {

@@ -19,7 +19,7 @@ export default function Login() {
     <div id='container'>
       <div id='container-img'>
 
-        <img src={myImage} alt='logo BQ'/>
+        <img src={myImage} alt='logo BQ' className='imgLogo'/>
       </div>
       <div id='container-form' className= {styles['']}>
         <form onSubmit={handleSubmit}>
