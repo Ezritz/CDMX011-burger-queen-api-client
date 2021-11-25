@@ -51,7 +51,7 @@ export default [{
     type: "Acompañamiento",
     description: "Aros de cebolla",
     Price: "$5",
-    img: "https://i.ibb.co/T8Yg3pq/onion-rings.png"
+    img: "https://i.ibb.co/4pkRn05/aros-cebolla.png"
 },
 {
     type: "Bebidas",
