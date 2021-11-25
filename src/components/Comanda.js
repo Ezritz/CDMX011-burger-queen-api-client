@@ -23,7 +23,11 @@ export default function Comanda() {
           <p className="total">$0</p>
         </tr>
       </div>
-      <button className="btn-comanda">Enviar comanda</button>
+      <div className="btns-comanda">
+        <button className="btn-comanda">Enviar comanda</button>
+        <button className="btn-cancelar">Cancelar</button>
+      </div>
+      
     </div>  
   )
     

@@ -19,20 +19,33 @@ $shadow-btn: 4px 4px 4px rgba(0, 0, 0, 0.25);
     }
     .btn-comanda {
         background-color: $color-background-comanda;
-        width: 165px;
+        width: 130px;
         height: 40px;
         font-family: 'Rum Raisin', sans-serif;
-        font-size: 22px;
+        font-size: 18px;
         border:none;
         border-radius: 20px;
         text-align: center;
         margin: auto;
         box-shadow: $shadow-btn;
     }
-    .btn-comanda:active{
+    .btn-cancelar {
+        @extend .btn-comanda;
+        background-color:rgba(222, 51, 62, 0.842);
+        color: white;
+        font-size: 20px;
+    }
+    .btn-comanda:active, .btn-cancelar:active {
         box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
         transform: translateY(3px);
     }
+}
+.btns-comanda{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin:auto;
 }
 .title-comanda {
     text-align: left;
