@@ -17,7 +17,22 @@ $shadow-btn: 4px 4px 4px rgba(0, 0, 0, 0.25);
         margin: auto;
       }
 }
+.cont-ntf {
+    background-image: url('https://i.ibb.co/JFLv6LD/notification.png');
+    width: 90px;
+    height: 90px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
+    .p-ntf{
+        text-align: center;
+        margin: 18% 0;
+        font-size: 45px;
+        -webkit-text-stroke: 3px black;
+        color:white;
+    }
+}
 .btn-breakfast{
     width: 256px;
     height: 80px;

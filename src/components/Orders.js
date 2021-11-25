@@ -27,7 +27,8 @@ export default function Orders() {
 
         </div>
         <div className="cont-ntf">
-          <img src={notification} alt="img-notification" className="ntf" />
+          <p className="p-ntf">0</p>
+          
         </div>
 
         <button
