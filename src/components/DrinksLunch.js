@@ -3,9 +3,9 @@ import menu from '../data';
 import BreakfastMenu from './BreakfastMenu';
 
 export default function DrinksLunch() {
-    let drinksLunch = menu.filter((elem) => elem.type === 'Bebidas');
+    let drinksLunch = menu["products"].filter((elem) => elem.type === 'Bebidas');
     let menuDrinks = drinksLunch.map((element) => {
-        return <BreakfastMenu image={element.img} text={element.description + " " + element.Price} className={"image-drinks"} width={'30px'}/>
+        return <BreakfastMenu image={element.image} text={element.name + " $" + element.price} className={"image-drinks"} width={'30px'}/>
     });
 
     return (
