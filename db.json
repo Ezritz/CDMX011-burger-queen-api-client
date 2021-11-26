@@ -1,7 +1,5 @@
-// eslint-disable-next-line
-
-export default {
-    "products":[
+{
+    "products": [
         {
             "_id": "01" ,
             "name": "Jamon y queso",
