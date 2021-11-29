@@ -3,14 +3,14 @@ import DrinksLunch from './DrinksLunch';
 import Burgers from './Burger';
 import Extras from './Extras';
 
-export default function Lunch() {
+export default function Lunch(props) {
     return (
         <div className="components">
             <div>
-                <Burgers />
-                <Extras />
+                <Burgers addProducts={props.addProducts} reduceProducts={props.reduceProducts}/>
+                <Extras addProducts={props.addProducts} reduceProducts={props.reduceProducts}/>
             </div>
-            <DrinksLunch />
+            <DrinksLunch addProducts={props.addProducts} reduceProducts={props.reduceProducts}/>
         </div>
     )
 }

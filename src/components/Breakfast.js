@@ -3,13 +3,13 @@ import DrinksBreakfast from './DrinksBreakfast';
 import Sandwich from './Sandwich';
 import '../css/orders/Comanda.scss';
 
-export default function Breakfast () {
+export default function Breakfast (props) {
   
   return (
     <div className="components">
       
-      <Sandwich />
-      <DrinksBreakfast />
+      <Sandwich addProducts={props.addProducts} reduceProducts={props.reduceProducts}/>
+      <DrinksBreakfast addProducts={props.addProducts} reduceProducts={props.reduceProducts}/>
     </div>
 
     
