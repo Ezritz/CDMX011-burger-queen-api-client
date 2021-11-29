@@ -6,8 +6,14 @@ export default function BreakfastMenu(props) {
       <div className="container-img">
         <img src={props.image} alt="img" className={props.id} width={props.width}></img>
       </div>
-      <button className="add">+</button>
-      <button className="sust">-</button>
+      <button 
+      className="add"
+      onClick={props.addProducts}
+      >+</button>
+      <button 
+      className="sust"
+      onClick={props.reduceProducts}
+      >-</button>
       <p className='name-text'>{props.text}</p>
     </div>
   )

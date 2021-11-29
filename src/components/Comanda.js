@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
 
-export default function Comanda() {
+export default function Comanda(props) {
   const [clientName, setClientName] = useState('');
 
+  // const [order, setOrder] = useState([]);
   const resetComanda = () => {
     setClientName('');
   }
-
+  /*
+  let itemOrder = props.orderProduct.map((elem) => {
+    return (
+      <tr>
+        <td>{elem.qty}</td>
+        <td>{elem.name}</td>
+        <td>{elem.price}</td>
+        <td>BOTE</td>
+      </tr>
+    ) 
+  })
+  */
 
   return (
     <div className="comanda">
@@ -28,6 +40,7 @@ export default function Comanda() {
             </tr>
           </thead>
           <tbody >
+            
           </tbody>
         </table> 
         <br/>

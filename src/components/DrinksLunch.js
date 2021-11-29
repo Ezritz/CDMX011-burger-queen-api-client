@@ -7,7 +7,7 @@ export default function DrinksLunch() {
     let menuDrinks = drinksLunch.map((element) => {
         return <BreakfastMenu image={element.image} text={element.name + " $" + element.price} className={"image-drinks"} width={'30px'}/>
     });
-
+    
     return (
         <div className="drinks-2">
             <p>Bebidas:</p>
