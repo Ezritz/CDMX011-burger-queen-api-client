@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import data from '../data';
 
 export default function Comanda(props) {
   const [clientName, setClientName] = useState('');
@@ -7,18 +8,21 @@ export default function Comanda(props) {
   const resetComanda = () => {
     setClientName('');
   }
-  /*
-  let itemOrder = props.orderProduct.map((elem) => {
-    return (
+
+  let itemOrder = []; 
+
+  for (let i = 0; i < props.orderProducts.length; i++) {
+    itemOrder.push( 
       <tr>
-        <td>{elem.qty}</td>
-        <td>{elem.name}</td>
-        <td>{elem.price}</td>
+        <td>{props.orderProducts[i].qty}</td>
+        <td>{props.orderProducts[i].name}</td>
+        <td>{props.orderProducts[i].price}</td>
         <td>BOTE</td>
       </tr>
-    ) 
-  })
-  */
+    )
+  }
+
+  console.log('itemOrder: ',itemOrder);
 
   return (
     <div className="comanda">
@@ -40,7 +44,9 @@ export default function Comanda(props) {
             </tr>
           </thead>
           <tbody >
-            
+            <td>
+              {itemOrder}
+            </td>
           </tbody>
         </table> 
         <br/>

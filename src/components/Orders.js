@@ -5,32 +5,40 @@ import Breakfast from './Breakfast';
 import Lunch from './Lunch';
 import Comanda from './Comanda';
 import '../css/orders/Orders.scss';
+import BreakfastMenu from './BreakfastMenu';
 
 // import { useState } from 'react';
+
+function product(id, name, price, qty) {
+  this.id = id;
+  this.name = name;
+  this.price = price;
+  this.qty = qty;
+}
 
 
 export default function Orders() {
   const { logout } = useLogout();
   const [activeMenu, setActiveMenu] = useState('');
-  const [orderProducts, setOrderProducts] = ([]);
+  const [orderProducts, setOrderProducts] = useState([]);
 
   
 
-  const addProduct = (product) => {
-    console.log('holis',orderProducts);
-    const exist = orderProducts.find((elem) => elem.id === product.id);
-
-    console.log('holis',orderProducts);
-    if(exist) {
-      setOrderProducts(
-        orderProducts.map((elem)=> 
-          elem.id === product.id ? { ...exist, qty: exist.qty + 1} : elem
-        )
-      )
-    } else {
-      setOrderProducts(
-        [...orderProducts, { ...product, qty: 1}]
-      )
+  const addProduct = (item) => {
+    console.log("item: ", item);
+    let exist = false;
+    for (let i = 0; i < orderProducts.length; i++) {
+      if (orderProducts[i].id === item.id) {
+        orderProducts[i].qty += 1;
+        exist = true;
+      }
+    }
+    console.log("exist: ", exist);
+    if(exist){
+      setOrderProducts(orderProducts);
+    }else{
+      let nop = [new product(item.id, item.name, item.price, 1)];
+      setOrderProducts(nop);
     }
   }
 
@@ -91,7 +99,7 @@ export default function Orders() {
           Almuerzo y Cena</button>
       </div>
       <div className="vista-perm">
-        <Comanda removeProducts={removeProduct} orderProduct={orderProducts}/>
+        <Comanda orderProducts={orderProducts} />
         {activeMenu === 'breakfast' && (
           <Breakfast addProduct={addProduct} reduceProduct={reduceProduct} orderProduct={orderProducts}/>
         )}

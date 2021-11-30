@@ -1,4 +1,5 @@
 import '../css/orders/BreakfastMenuBox.scss'
+import data from '../data';
 export default function BreakfastMenu(props) {
     
   return (
@@ -8,13 +9,16 @@ export default function BreakfastMenu(props) {
       </div>
       <button 
       className="add"
-      onClick={()=>console.log(props.addProduct)}
-      >+</button>
+      onClick={()=> {
+        console.log('idp',props.id)
+        console.log("yoooo: ", props.addProduct)
+        props.addProduct({id:props.productId, name:props.name, price:props.price});
+      }}>+</button>
       <button 
       className="sust"
       onClick={()=>console.log(props.item)}
       >-</button>
-      <p className='name-text'>{props.text}</p>
+      <p className='name-text'>{props.name + ' $' + props.price}</p>
     </div>
   )
 }
