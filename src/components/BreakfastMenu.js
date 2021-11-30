@@ -8,11 +8,11 @@ export default function BreakfastMenu(props) {
       </div>
       <button 
       className="add"
-      onClick={props.addProducts}
+      onClick={()=>console.log(props.addProduct)}
       >+</button>
       <button 
       className="sust"
-      onClick={props.reduceProducts}
+      onClick={()=>console.log(props.item)}
       >-</button>
       <p className='name-text'>{props.text}</p>
     </div>
