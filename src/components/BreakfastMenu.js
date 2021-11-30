@@ -6,7 +6,7 @@ export default function BreakfastMenu(props) {
     function reducir(id){
       let exist= props.orderProduct.find((elem) => elem._id === id)
       if (exist  && exist.qty > 1){
-        exist.qty -=1;
+        exist.qty =-1;
       }
       if(exist && exist.qty === 1) {
         return props.orderProduct.filter(elem => elem._id !== id)

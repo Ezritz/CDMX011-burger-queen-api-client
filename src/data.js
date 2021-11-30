@@ -23,7 +23,7 @@ export default {
             "name": "Café Americano",
             "price": 5,
             "image": "https://i.ibb.co/symtb8S/coffee.png",
-            "type": "Bebida-desayuno",
+            "type": "Bebida",
             "dateEntry": "2021-26-11"
         },
         {
@@ -31,7 +31,7 @@ export default {
             "name": "Café con leche",
             "price": 7,
             "image": "https://i.ibb.co/zPWrW78/coffee-mug.png",
-            "type": "Bebida-desayuno",
+            "type": "Bebida",
             "dateEntry": "2021-26-11"
         },
         {
@@ -39,7 +39,7 @@ export default {
             "name": "Jugo de frutas",
             "price": 7,
             "image": "https://i.ibb.co/L1JnkYk/orange-juice-1.png",
-            "type": "Bebida-desayuno",
+            "type": "Bebida",
             "dateEntry": "2021-26-11"
         },
         {

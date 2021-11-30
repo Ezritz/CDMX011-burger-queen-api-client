@@ -7,6 +7,7 @@ export default function Comanda(props) {
   // const [order, setOrder] = useState([]);
   const resetComanda = () => {
     setClientName('');
+    props.orderProducts=[];
   }
 
   let itemOrder = []; 
@@ -16,8 +17,8 @@ export default function Comanda(props) {
     itemOrder.push( 
       <tr>
         <td>{props.orderProducts[i].qty}</td>
-        <td>{props.orderProducts[i].name}</td>
-        <td>{props.orderProducts[i].price}</td>
+        <td>{props.orderProducts[i].type + ' '+ props.orderProducts[i].name}</td>
+        <td>{'$ '+props.orderProducts[i].price}</td>
         <td>BOTE</td>
       </tr>
     )
