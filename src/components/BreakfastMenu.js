@@ -32,11 +32,11 @@ export default function BreakfastMenu(props) {
       <button 
       className="add"
       onClick={()=> {
-        console.log(add(props.productId))
+        add(props.productId)
       }}>+</button>
       <button 
       className="sust"
-      onClick={()=>console.log(reducir(props.productId))}
+      onClick={()=>{reducir(props.productId)}}
       >-</button>
       <p className='name-text'>{props.name + ' $' + props.price}</p>
     </div>
