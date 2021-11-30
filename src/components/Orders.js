@@ -47,7 +47,7 @@ export default function Orders() {
           <Breakfast orderProduct={orderProducts} />
         )}
         {activeMenu === 'lunch' && (
-          <Lunch />
+          <Lunch orderProduct={orderProducts}/>
         )}
       </div>
 
