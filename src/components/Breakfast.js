@@ -21,7 +21,7 @@ export default function Breakfast(props) {
     />
   })
 
-  let drinksBreak = menu["products"].filter((elem) => elem.type === 'Bebida-desayuno');
+  let drinksBreak = menu["products"].filter((elem) => elem.type === 'Bebida');
   let menuDrinks = drinksBreak.map((element) => {
     return <BreakfastMenu
       image={element.image}
