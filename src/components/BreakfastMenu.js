@@ -1,17 +1,19 @@
 import '../css/orders/BreakfastMenuBox.scss'
 import data from '../data';
 export default function BreakfastMenu(props) {
+
+  // reduce la lista de productos en caso de click en -
     function reducir(id){
       let exist= props.orderProduct.find((elem) => elem._id === id)
       if (exist  && exist.qty > 1){
-        exist.qty -=1
+        exist.qty -=1;
       }
       if(exist && exist.qty === 1) {
         return props.orderProduct.filter(elem => elem._id !== id)
       }
       return props.orderProduct
     }
-
+    // agrega los productos en arreglo
     function add(id){
       let exist= props.orderProduct.find((elem) => elem._id === id)
       if (exist){
@@ -30,11 +32,6 @@ export default function BreakfastMenu(props) {
       <button 
       className="add"
       onClick={()=> {
-        //console.log('idp',props.id)
-        //console.log("yoooo: ", props.addProduct)
-        //props.addProduct({id:props.productId, name:props.name, price:props.price});
-        //console.log('props.orderProducts-breakfast')
-        //console.log(props.orderProduct)
         console.log(add(props.productId))
       }}>+</button>
       <button 
