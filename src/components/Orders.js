@@ -101,7 +101,7 @@ export default function Orders() {
       <div className="vista-perm">
         <Comanda orderProducts={orderProducts} />
         {activeMenu === 'breakfast' && (
-          <Breakfast addProduct={addProduct} reduceProduct={reduceProduct} orderProduct={orderProducts}/>
+          <Breakfast addProduct={addProduct} reduceProduct={reduceProduct} orderProduct={orderProducts} setOrderProduct={setOrderProducts}/>
         )}
         {activeMenu === 'lunch' && (
           <Lunch addProducts={addProduct} reduceProducts={reduceProduct}/>

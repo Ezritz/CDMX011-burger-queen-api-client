@@ -10,7 +10,8 @@ export default function Comanda(props) {
   }
 
   let itemOrder = []; 
-
+  console.log('props.orderProducts-comanda')
+  console.log(props.orderProducts)
   for (let i = 0; i < props.orderProducts.length; i++) {
     itemOrder.push( 
       <tr>
@@ -44,17 +45,16 @@ export default function Comanda(props) {
             </tr>
           </thead>
           <tbody >
-            <td>
+            
               {itemOrder}
-            </td>
           </tbody>
         </table> 
         <br/>
-        <tr className="total">
+        <div className="total">
           <p className="total">Total</p>
           <p className="total">$0</p>
           <p className="total">{clientName}</p>
-        </tr>
+        </div>
       </div>
       <div className="btns-comanda">
         <button
