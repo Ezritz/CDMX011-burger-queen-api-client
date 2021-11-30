@@ -9,7 +9,7 @@ export default function drinksBreakfast(props) {
         image={element.image} 
         name={element.name}
         price={element.price} 
-        item={element} addProduct={props.addProduct} reduceProduct={props.reduceProduct} orderProduct={props.orderProducts} className={"image-drinks"} width={'48px'}/>
+        productId={element._id} addProduct={props.addProduct} reduceProduct={props.reduceProduct} orderProduct={props.orderProducts} className={"image-drinks"} width={'48px'}/>
     });
 
     return (
