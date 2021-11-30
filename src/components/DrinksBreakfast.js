@@ -5,7 +5,11 @@ import BreakfastMenu from './BreakfastMenu';
 export default function drinksBreakfast(props) {
     let drinksBreak = menu["products"].filter((elem) => elem.type === 'Bebida-desayuno');
     let menuDrinks = drinksBreak.map((element) => {
-        return <BreakfastMenu image={element.image} text={element.name + " $" + element.price} item={element} addProduct={props.addProduct} reduceProduct={props.reduceProduct} orderProduct={props.orderProducts} className={"image-drinks"} width={'48px'}/>
+        return <BreakfastMenu 
+        image={element.image} 
+        name={element.name}
+        price={element.price} 
+        item={element} addProduct={props.addProduct} reduceProduct={props.reduceProduct} orderProduct={props.orderProducts} className={"image-drinks"} width={'48px'}/>
     });
 
     return (
