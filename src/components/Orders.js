@@ -17,6 +17,7 @@ export default function Orders() {
   
 
   const addProduct = (product) => {
+    console.log('holis',orderProducts);
     const exist = orderProducts.find((elem) => elem.id === product.id);
 
     console.log('holis',orderProducts);
@@ -92,7 +93,7 @@ export default function Orders() {
       <div className="vista-perm">
         <Comanda removeProducts={removeProduct} orderProduct={orderProducts}/>
         {activeMenu === 'breakfast' && (
-          <Breakfast addProducts={addProduct} reduceProducts={reduceProduct}/>
+          <Breakfast addProduct={addProduct} reduceProduct={reduceProduct} orderProduct={orderProducts}/>
         )}
         {activeMenu === 'lunch' && (
           <Lunch addProducts={addProduct} reduceProducts={reduceProduct}/>

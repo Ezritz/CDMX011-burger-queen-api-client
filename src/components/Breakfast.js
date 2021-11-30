@@ -8,8 +8,8 @@ export default function Breakfast (props) {
   return (
     <div className="components">
       
-      <Sandwich addProducts={props.addProducts} reduceProducts={props.reduceProducts}/>
-      <DrinksBreakfast addProducts={props.addProducts} reduceProducts={props.reduceProducts}/>
+      <Sandwich addProduct={props.addProduct} reduceProduct={props.reduceProduct} orderProduct={props.orderProducts}/>
+      <DrinksBreakfast addProduct={props.addProduct} reduceProduct={props.reduceProduct} orderProduct={props.orderProducts}/>
     </div>
 
     
