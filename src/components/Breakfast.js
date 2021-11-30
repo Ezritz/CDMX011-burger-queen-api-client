@@ -6,21 +6,18 @@ import '../css/orders/Comanda.scss';
 import menu from '../data'
 
 export default function Breakfast(props) {
-  //console.log('props.orderProducts-breakfast')
-  //console.log(props.orderProduct)
+ 
   let sandwich = menu["products"].filter((elem) => elem.type === 'Sandwich');
   let menuFood = sandwich.map((element) => {
     return <BreakfastMenu
-      addProduct={props.addProduct}
       image={element.image}
       name={element.name}
       price={element.price}
       id={"image-food"}
       width={'50px'}
       productId={element._id}
-      reduceProduct={props.reduceProduct}
       orderProduct={props.orderProduct}
-      setOrderProduct={props.setOrderProduct}
+     
     />
   })
 
@@ -30,7 +27,8 @@ export default function Breakfast(props) {
       image={element.image}
       name={element.name}
       price={element.price}
-      productId={element._id} addProduct={props.addProduct} reduceProduct={props.reduceProduct} orderProduct={props.orderProduct} className={"image-drinks"} width={'48px'} />
+      productId={element._id} 
+      orderProduct={props.orderProduct} className={"image-drinks"} width={'48px'} />
   });
 
   return (
