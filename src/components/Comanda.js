@@ -3,11 +3,10 @@ import data from '../data';
 
 export default function Comanda(props) {
   const [clientName, setClientName] = useState('');
-
   // const [order, setOrder] = useState([]);
   const resetComanda = () => {
     setClientName('');
-    props.orderProducts=[];
+    //props.orderProducts=[];
   }
 
   let itemOrder = []; 
@@ -17,14 +16,14 @@ export default function Comanda(props) {
     itemOrder.push( 
       <tr>
         <td>{props.orderProducts[i].qty}</td>
-        <td>{props.orderProducts[i].type + ' '+ props.orderProducts[i].name}</td>
-        <td>{'$ '+props.orderProducts[i].price}</td>
+        <td>{props.orderProducts[i].name}</td>
+        <td>{'$'+(props.orderProducts[i].price*props.orderProducts[i].qty)}</td>
         <td>BOTE</td>
       </tr>
     )
   }
 
-  console.log('itemOrder: ',itemOrder);
+  //console.log('itemOrder: ',itemOrder);
 
   return (
     <div className="comanda">
@@ -62,7 +61,7 @@ export default function Comanda(props) {
         className="btn-comanda">Enviar comanda</button>
         <button 
         className="btn-cancelar"
-        onClick={resetComanda}
+        onClick={()=> resetComanda()}
         >Cancelar</button>
       </div>
       

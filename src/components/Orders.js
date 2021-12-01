@@ -10,8 +10,12 @@ export default function Orders() {
   const { logout } = useLogout();
   const [activeMenu, setActiveMenu] = useState('');
   const [orderProducts, setOrderProducts] = useState([]);
+  //const [clientName, setClientName] = useState('');
 
-
+  /*const resetComanda = () => {
+    setClientName('');
+    setOrderProducts([]);
+  }*/
 
   return (
 
@@ -42,7 +46,7 @@ export default function Orders() {
           Almuerzo y Cena</button>
       </div>
       <div className="vista-perm">
-        <Comanda orderProducts={orderProducts} />
+        <Comanda orderProducts={orderProducts}/>
         {activeMenu === 'breakfast' && (
           <Breakfast orderProduct={orderProducts} />
         )}
