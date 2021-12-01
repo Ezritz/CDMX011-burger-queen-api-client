@@ -4,7 +4,7 @@ export default {
     "products":[
         {
             "_id": "01" ,
-            "name": "Jamon y queso",
+            "name": "Sandwich Jamon",
             "price": 10,
             "image": "https://i.ibb.co/qW0DsLr/sandwich.png",
             "type": "Sandwich",
@@ -12,7 +12,7 @@ export default {
         },
         {
             "_id": "02",
-            "name": "Pollo",
+            "name": "Sandwich Pollo",
             "price": 15,
             "image": "https://i.ibb.co/qW0DsLr/sandwich.png",
             "type": "Sandwich",
@@ -44,7 +44,7 @@ export default {
         },
         {
             "_id":  "06",
-            "name": "Sencilla",
+            "name": "Burger Sencilla",
             "price": 10,
             "image": "https://i.ibb.co/XjyPggL/hamburguesa.png",
             "type": "Hamburguesas",
@@ -52,7 +52,7 @@ export default {
         },
         {
             "_id":  "07",
-            "name": "Doble",
+            "name": "Burger Doble",
             "price": 15,
             "image": "https://i.ibb.co/j50dVg3/hamburgesa-doble.png",
             "type": "Hamburguesas",
