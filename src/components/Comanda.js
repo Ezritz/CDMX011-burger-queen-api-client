@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import data from '../data';
 
-export default function Comanda({handleResetComanda, handleClientName, otraOrden}) {
+export default function Comanda({handleResetComanda, handleNameClient, otraOrden}) {
   
   let itemOrder = []; 
   
@@ -24,7 +24,7 @@ export default function Comanda({handleResetComanda, handleClientName, otraOrden
       <input 
       type="text" 
       placeholder="Nombre Cliente"
-      onChange={(e) => handleClientName(e.target.value)}
+      onChange={(e) => handleNameClient(e.target.value)}
       value={otraOrden.nombre}
       id="client-name"></input>
       <div id="total-products">
