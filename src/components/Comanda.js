@@ -16,6 +16,11 @@ export default function Comanda({handleResetComanda, handleNameClient, otraOrden
     )
   }
 
+  let total = 0;
+  for(let i = 0; i < otraOrden.item.length; i++){
+    total += otraOrden.item[i].price*otraOrden.item[i].qty;
+  }
+
   //console.log('itemOrder: ',itemOrder);
 
   return (
@@ -44,8 +49,8 @@ export default function Comanda({handleResetComanda, handleNameClient, otraOrden
         </table> 
         <br/>
         <div className="total">
-          <p className="total">Total</p>
-          <p className="total">$0</p>
+          <p className="total">Total: ${total}</p>
+          
           <p className="total">{otraOrden.nombre}</p>
         </div>
       </div>
