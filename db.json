@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "_id": "01" ,
+      "_id": "01",
       "name": "Jamon y queso",
       "price": 10,
       "image": "https://i.ibb.co/qW0DsLr/sandwich.png",
@@ -17,7 +17,7 @@
       "dateEntry": "2021-26-11"
     },
     {
-      "_id":  "03",
+      "_id": "03",
       "name": "Café Americano",
       "price": 5,
       "image": "https://i.ibb.co/symtb8S/coffee.png",
@@ -25,7 +25,7 @@
       "dateEntry": "2021-26-11"
     },
     {
-      "_id":  "04",
+      "_id": "04",
       "name": "Café con leche",
       "price": 7,
       "image": "https://i.ibb.co/zPWrW78/coffee-mug.png",
@@ -33,7 +33,7 @@
       "dateEntry": "2021-26-11"
     },
     {
-      "_id":  "05",
+      "_id": "05",
       "name": "Jugo de frutas",
       "price": 7,
       "image": "https://i.ibb.co/L1JnkYk/orange-juice-1.png",
@@ -41,7 +41,7 @@
       "dateEntry": "2021-26-11"
     },
     {
-      "_id":  "06",
+      "_id": "06",
       "name": "Sencilla",
       "price": 10,
       "image": "https://i.ibb.co/XjyPggL/hamburguesa.png",
@@ -49,7 +49,7 @@
       "dateEntry": "2021-26-11"
     },
     {
-      "_id":  "07",
+      "_id": "07",
       "name": "Doble",
       "price": 15,
       "image": "https://i.ibb.co/j50dVg3/hamburgesa-doble.png",
@@ -57,15 +57,15 @@
       "dateEntry": "2021-26-11"
     },
     {
-      "_id":  "08",
+      "_id": "08",
       "name": "Papas fritas",
       "price": 5,
       "image": "https://i.ibb.co/tBPkSfv/papitas.png",
       "type": "Acompañamiento",
-      "dateEntry":"2021-26-11" 
+      "dateEntry": "2021-26-11"
     },
     {
-      "_id":  "09",
+      "_id": "09",
       "name": "Aros de cebolla",
       "price": 5,
       "image": "https://i.ibb.co/4pkRn05/aros-cebolla.png",
@@ -73,15 +73,15 @@
       "dateEntry": "2021-26-11"
     },
     {
-      "_id": "10" ,
+      "_id": "10",
       "name": "Agua 500ml",
       "price": 5,
       "image": "https://i.ibb.co/L6T0kRd/agua-500.png",
       "type": "Bebidas",
-      "dateEntry": "2021-26-11" 
+      "dateEntry": "2021-26-11"
     },
     {
-      "_id":  "11",
+      "_id": "11",
       "name": "Agua 750ml",
       "price": 7,
       "image": "https://i.ibb.co/GTgSWK0/agua-750.png",
@@ -89,7 +89,7 @@
       "dateEntry": "2021-26-11"
     },
     {
-      "_id":  "12",
+      "_id": "12",
       "name": "Gaseosa 500ml",
       "price": 7,
       "image": "https://i.ibb.co/qyz2jCN/soda-500.png",
@@ -97,7 +97,7 @@
       "dateEntry": "2021-26-11"
     },
     {
-      "_id":  "13",
+      "_id": "13",
       "name": "Gaseosa 750ml",
       "price": 10,
       "image": "https://i.ibb.co/J52gRfg/soda-750.png",
