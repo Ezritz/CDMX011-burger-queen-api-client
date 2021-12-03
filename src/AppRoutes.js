@@ -35,7 +35,13 @@ function AppRoutes() {
       {authIsReady && (
         <BrowserRouter>
           
+          
           <Routes>
+          <Route 
+              path="/"
+              element={
+                <HomeRoute/>
+            }/>
             <Route 
               path="/orders" 
               element={
@@ -58,11 +64,7 @@ function AppRoutes() {
                 </LoginRoute>
               }/>
 
-            <Route 
-              path="/"
-              element={
-                <HomeRoute/>
-              }/>
+            
               
           </Routes>
           
