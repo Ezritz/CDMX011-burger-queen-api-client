@@ -4,18 +4,57 @@ import myImage from '../images/logoMesero.png';
 import Breakfast from './Breakfast';
 import Lunch from './Lunch';
 import Comanda from './Comanda';
+import menu from '../data';
 import '../css/orders/Orders.scss';
 
 export default function Orders() {
   const { logout } = useLogout();
   const [activeMenu, setActiveMenu] = useState('');
   const [orderProducts, setOrderProducts] = useState([]);
-  //const [clientName, setClientName] = useState('');
+  // const [clientName, setClientName] = usestate('');
+  const [otraOrden, setOtraOrden] = useState({
+    nombre: '',
+    item:[]
+  });
 
-  /*const resetComanda = () => {
-    setClientName('');
-    setOrderProducts([]);
-  }*/
+  const handleResetComanda=() => {
+    setOtraOrden({
+      nombre: '',
+      item:[]
+    })
+  }
+
+  const handleNameClient =(newName) => {
+    setOtraOrden({nombre: newName, item:[...otraOrden.item]});
+
+  }
+
+  const handleAddProduct = (id) => {
+    
+    let exist= otraOrden.item.find((elem) => elem._id === id);
+    if(exist) {
+      exist.qty +=1;
+      setOtraOrden({...otraOrden,item:[...otraOrden.item]});
+    } else {
+      let prod = menu.products.find(elem => elem._id === id);
+      setOtraOrden({...otraOrden,item:[...otraOrden.item,{...prod, qty:1}]});
+      
+    }
+    console.log(otraOrden);
+  }
+  const handleReduceProduct= (id) => {
+    let exist= otraOrden.item.find((elem) => elem._id === id);
+    if(exist) {
+      exist.qty -=1;
+      setOtraOrden({...otraOrden,item:[...otraOrden.item]});
+    }
+    if(exist && exist.qty === 1) {
+      setOtraOrden({...otraOrden, item:otraOrden.item.filter(elem => elem._id !== id)})
+      
+    }
+    console.log('resta', otraOrden);
+  }
+
 
   return (
 
@@ -46,12 +85,12 @@ export default function Orders() {
           Almuerzo y Cena</button>
       </div>
       <div className="vista-perm">
-        <Comanda orderProducts={orderProducts}/>
+        <Comanda handleResetComanda={handleResetComanda} handleNameClient={handleNameClient} otraOrden={otraOrden} />
         {activeMenu === 'breakfast' && (
-          <Breakfast orderProduct={orderProducts} />
+          <Breakfast handleAddProduct={handleAddProduct} handleReduceProduct={handleReduceProduct}/>
         )}
         {activeMenu === 'lunch' && (
-          <Lunch orderProduct={orderProducts}/>
+          <Lunch handleAddProduct={handleAddProduct} handleReduceProduct={handleReduceProduct}/>
         )}
       </div>
 

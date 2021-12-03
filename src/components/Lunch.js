@@ -2,7 +2,7 @@ import '../css/orders/Breakfast.scss';
 import menu from '../data';
 import BreakfastMenu from './BreakfastMenu';
 
-export default function Lunch(props) {
+export default function Lunch({handleAddProduct, handleReduceProduct}) {
     let burgers = menu["products"].filter((elem) => elem.type === 'Hamburguesas');
     let menuBurgers = burgers.map((element) => {
         return <BreakfastMenu 
@@ -10,7 +10,8 @@ export default function Lunch(props) {
         name={element.name}
         price={element.price}
         productId={element._id}
-        orderProduct={props.orderProduct}
+        handleAddProduct={handleAddProduct}
+        handleReduceProduct={handleReduceProduct}
         className={"image-drinks"} width={'48px'}/>
     });
 
@@ -21,7 +22,8 @@ export default function Lunch(props) {
         name={element.name}
         price={element.price}
         productId={element._id}
-        orderProduct={props.orderProduct}
+        handleAddProduct={handleAddProduct}
+        handleReduceProduct={handleReduceProduct}
         className={"image-drinks"} width={'30px'}/>
     });
 
@@ -32,7 +34,8 @@ export default function Lunch(props) {
         name={element.name}
         price={element.price}
         productId={element._id}
-        orderProduct={props.orderProduct} 
+        handleAddProduct={handleAddProduct}
+        handleReduceProduct={handleReduceProduct}
         className={"image-drinks"} width={'46px'}/>
     });
 

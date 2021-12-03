@@ -1,23 +1,16 @@
 import React, { useState } from 'react';
 import data from '../data';
 
-export default function Comanda(props) {
-  const [clientName, setClientName] = useState('');
-  // const [order, setOrder] = useState([]);
-  const resetComanda = () => {
-    setClientName('');
-    //props.orderProducts=[];
-  }
-
+export default function Comanda({handleResetComanda, handleClientName, otraOrden}) {
+  
   let itemOrder = []; 
-  console.log('props.orderProducts-comanda')
-  console.log(props.orderProducts)
-  for (let i = 0; i < props.orderProducts.length; i++) {
+  
+  for (let i = 0; i < otraOrden.item.length; i++) {
     itemOrder.push( 
       <tr>
-        <td>{props.orderProducts[i].qty}</td>
-        <td>{props.orderProducts[i].name}</td>
-        <td>{'$'+(props.orderProducts[i].price*props.orderProducts[i].qty)}</td>
+        <td>{otraOrden.item[i].qty}</td>
+        <td>{otraOrden.item[i].name}</td>
+        <td>{'$'+(otraOrden.item[i].price*otraOrden.item[i].qty)}</td>
         <td>BOTE</td>
       </tr>
     )
@@ -31,8 +24,8 @@ export default function Comanda(props) {
       <input 
       type="text" 
       placeholder="Nombre Cliente"
-      onChange={(e) => setClientName(e.target.value)}
-      value={clientName}
+      onChange={(e) => handleClientName(e.target.value)}
+      value={otraOrden.nombre}
       id="client-name"></input>
       <div id="total-products">
         <table className="table">
@@ -53,7 +46,7 @@ export default function Comanda(props) {
         <div className="total">
           <p className="total">Total</p>
           <p className="total">$0</p>
-          <p className="total">{clientName}</p>
+          <p className="total">{otraOrden.nombre}</p>
         </div>
       </div>
       <div className="btns-comanda">
@@ -61,7 +54,7 @@ export default function Comanda(props) {
         className="btn-comanda">Enviar comanda</button>
         <button 
         className="btn-cancelar"
-        onClick={()=> resetComanda()}
+        onClick={()=> handleResetComanda()}
         >Cancelar</button>
       </div>
       
