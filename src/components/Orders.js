@@ -44,13 +44,12 @@ export default function Orders() {
   }
   const handleReduceProduct= (id) => {
     let exist= otraOrden.item.find((elem) => elem._id === id);
-    if(exist) {
+    if(exist && exist.qty >1) {
       exist.qty -=1;
       setOtraOrden({...otraOrden,item:[...otraOrden.item]});
     }
     if(exist && exist.qty === 1) {
       setOtraOrden({...otraOrden, item:otraOrden.item.filter(elem => elem._id !== id)})
-      
     }
     console.log('resta', otraOrden);
   }
