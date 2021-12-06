@@ -2,7 +2,7 @@
   "products": [
     {
       "_id": "01",
-      "name": "Jamon y queso",
+      "name": "Sandwich Jamon",
       "price": 10,
       "image": "https://i.ibb.co/qW0DsLr/sandwich.png",
       "type": "Sandwich",
@@ -10,7 +10,7 @@
     },
     {
       "_id": "02",
-      "name": "Pollo",
+      "name": "Sandwich Pollo",
       "price": 15,
       "image": "https://i.ibb.co/qW0DsLr/sandwich.png",
       "type": "Sandwich",
@@ -42,7 +42,7 @@
     },
     {
       "_id": "06",
-      "name": "Sencilla",
+      "name": "Burger Sencilla",
       "price": 10,
       "image": "https://i.ibb.co/XjyPggL/hamburguesa.png",
       "type": "Hamburguesas",
@@ -50,7 +50,7 @@
     },
     {
       "_id": "07",
-      "name": "Doble",
+      "name": "Burger Doble",
       "price": 15,
       "image": "https://i.ibb.co/j50dVg3/hamburgesa-doble.png",
       "type": "Hamburguesas",
@@ -104,5 +104,26 @@
       "type": "Bebidas",
       "dateEntry": "2021-26-11"
     }
+  ],
+  "orders": [
+    {
+      "_id":"",
+      "userId":"",
+      "client": "",
+      "products":[{
+        "_id": "13",
+        "name": "Gaseosa 750ml",
+        "price": 10,
+        "image": "https://i.ibb.co/J52gRfg/soda-750.png",
+        "type": "Bebidas",
+        "dateEntry": "2021-26-11",
+        "qty":1
+      }],
+      "status": "pending",
+      "dateEntry": "2021-26-11",
+      "dateProcessed": "2021-26-11"
+    }
   ]
 }
+
+

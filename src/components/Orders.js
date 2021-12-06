@@ -6,6 +6,7 @@ import Lunch from './Lunch';
 import Comanda from './Comanda';
 import menu from '../data';
 import '../css/orders/Orders.scss';
+import { createElements } from '../crud';
 
 export default function Orders() {
   const { logout } = useLogout();
@@ -15,52 +16,66 @@ export default function Orders() {
 
   // const [clientName, setClientName] = usestate('');
   const [otraOrden, setOtraOrden] = useState({
-    nombre: '',
-    item:[]
+    '_id': '',
+    'userId': '',
+    'status': 'pending',
+    'dateEntry': new Date(),
+    'client': '',
+      'products': [],
   });
 
   const handleResetComanda=() => {
     setOtraOrden({
-      nombre: '',
-      item:[]
+      '_id': '',
+      'userId': '',
+      'status': 'pending',
+      'dateEntry': new Date(),
+      'client': '',
+      'products': [],
     })
   }
 
   const handleNameClient =(newName) => {
-    setOtraOrden({nombre: newName, item:[...otraOrden.item]});
+    setOtraOrden({...otraOrden, client: newName, products:[...otraOrden.products]});
 
   }
 
   const handleAddProduct = (id) => {
     
-    let exist= otraOrden.item.find((elem) => elem._id === id);
+    let exist= otraOrden.products.find((elem) => elem._id === id);
     if(exist) {
       exist.qty +=1;
-      setOtraOrden({...otraOrden,item:[...otraOrden.item]});
+      setOtraOrden({...otraOrden,products:[...otraOrden.products]});
     } else {
       let prod = menu.products.find(elem => elem._id === id);
-      setOtraOrden({...otraOrden,item:[...otraOrden.item,{...prod, qty:1}]});
+      setOtraOrden({...otraOrden,products:[...otraOrden.products,{...prod, qty:1}]});
       
     }
     console.log(otraOrden);
   }
   const handleReduceProduct= (id) => {
-    let exist= otraOrden.item.find((elem) => elem._id === id);
+    let exist= otraOrden.products.find((elem) => elem._id === id);
     if(exist && exist.qty >1) {
       exist.qty -=1;
-      setOtraOrden({...otraOrden,item:[...otraOrden.item]});
+      setOtraOrden({...otraOrden,products:[...otraOrden.products]});
     }
     if(exist && exist.qty === 1) {
-      setOtraOrden({...otraOrden, item:otraOrden.item.filter(elem => elem._id !== id)})
+      setOtraOrden({...otraOrden, products:otraOrden.products.filter(elem => elem._id !== id)})
     }
     console.log('resta', otraOrden);
   }
 
   const handleRemoveProduct = (id) => {
-    let exist= otraOrden.item.find((elem) => elem._id === id);
+    let exist= otraOrden.products.find((elem) => elem._id === id);
     if(exist) {
-      setOtraOrden({...otraOrden, item:otraOrden.item.filter(elem => elem._id !== id)})
+      setOtraOrden({...otraOrden, products:otraOrden.products.filter(elem => elem._id !== id)})
     }
+  }
+
+  const handleSendComanda = async () => {
+    console.log('error',otraOrden)
+    await createElements('orders', otraOrden);
+    
   }
 
 
@@ -93,7 +108,7 @@ export default function Orders() {
           Almuerzo y Cena</button>
       </div>
       <div className="vista-perm">
-        <Comanda handleResetComanda={handleResetComanda} handleNameClient={handleNameClient} otraOrden={otraOrden} handleRemoveProduct={handleRemoveProduct}/>
+        <Comanda handleResetComanda={handleResetComanda} handleNameClient={handleNameClient} otraOrden={otraOrden} handleRemoveProduct={handleRemoveProduct} handleSendComanda={handleSendComanda} />
         {activeMenu === 'breakfast' && (
           <Breakfast handleAddProduct={handleAddProduct} handleReduceProduct={handleReduceProduct}/>
         )}
