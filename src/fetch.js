@@ -3,7 +3,8 @@ export default async function generalFetch ({path, method, body}) {
         method,
         body: JSON.stringify(body),
         header: {
-            "Content-type": "application/json"
+            "Content-type": "application/json",
+            "Accept": "application/json"
         }
     })
     return await res.json();

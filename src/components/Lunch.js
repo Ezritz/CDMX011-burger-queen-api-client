@@ -1,9 +1,19 @@
 import '../css/orders/Breakfast.scss';
-import menu from '../data';
 import BreakfastMenu from './BreakfastMenu';
+import { useEffect, useState } from 'react';
+import {
+    getElements
+  } from '../crud';
 
 export default function Lunch({handleAddProduct, handleReduceProduct}) {
-    let burgers = menu["products"].filter((elem) => elem.type === 'Hamburguesas');
+    const [data, setData] = useState([]);
+  
+    useEffect(() => {
+      getElements('products').then((data) => setData(data))
+    }, [])
+  
+
+    let burgers = data.filter((elem) => elem.type === 'Hamburguesas');
     let menuBurgers = burgers.map((element) => {
         return <BreakfastMenu 
         image={element.image}
@@ -15,7 +25,7 @@ export default function Lunch({handleAddProduct, handleReduceProduct}) {
         className={"image-drinks"} width={'48px'}/>
     });
 
-    let drinksLunch = menu["products"].filter((elem) => elem.type === 'Bebidas');
+    let drinksLunch = data.filter((elem) => elem.type === 'Bebidas');
     let menuDrinks = drinksLunch.map((element) => {
         return <BreakfastMenu 
         image={element.image}
@@ -27,7 +37,7 @@ export default function Lunch({handleAddProduct, handleReduceProduct}) {
         className={"image-drinks"} width={'30px'}/>
     });
 
-    let extras = menu["products"].filter((elem) => elem.type === 'Acompañamiento');
+    let extras = data.filter((elem) => elem.type === 'Acompañamiento');
     let menuExtras = extras.map((element) => {
         return <BreakfastMenu  
         image={element.image}
