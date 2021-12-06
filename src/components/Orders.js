@@ -10,7 +10,9 @@ import '../css/orders/Orders.scss';
 export default function Orders() {
   const { logout } = useLogout();
   const [activeMenu, setActiveMenu] = useState('');
-  const [orderProducts, setOrderProducts] = useState([]);
+  
+  
+
   // const [clientName, setClientName] = usestate('');
   const [otraOrden, setOtraOrden] = useState({
     nombre: '',
@@ -54,6 +56,13 @@ export default function Orders() {
     console.log('resta', otraOrden);
   }
 
+  const handleRemoveProduct = (id) => {
+    let exist= otraOrden.item.find((elem) => elem._id === id);
+    if(exist) {
+      setOtraOrden({...otraOrden, item:otraOrden.item.filter(elem => elem._id !== id)})
+    }
+  }
+
 
   return (
 
@@ -84,7 +93,7 @@ export default function Orders() {
           Almuerzo y Cena</button>
       </div>
       <div className="vista-perm">
-        <Comanda handleResetComanda={handleResetComanda} handleNameClient={handleNameClient} otraOrden={otraOrden} />
+        <Comanda handleResetComanda={handleResetComanda} handleNameClient={handleNameClient} otraOrden={otraOrden} handleRemoveProduct={handleRemoveProduct}/>
         {activeMenu === 'breakfast' && (
           <Breakfast handleAddProduct={handleAddProduct} handleReduceProduct={handleReduceProduct}/>
         )}

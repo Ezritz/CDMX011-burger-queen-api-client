@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import data from '../data';
 
-export default function Comanda({handleResetComanda, handleNameClient, otraOrden}) {
+
+export default function Comanda({handleResetComanda, handleNameClient, otraOrden, handleRemoveProduct}) {
   
   let itemOrder = []; 
   
@@ -11,7 +12,10 @@ export default function Comanda({handleResetComanda, handleNameClient, otraOrden
         <td>{otraOrden.item[i].qty}</td>
         <td>{otraOrden.item[i].name}</td>
         <td>{'$'+(otraOrden.item[i].price*otraOrden.item[i].qty)}</td>
-        <td>BOTE</td>
+        <td><button 
+        className="btn-delete"
+        onClick={() => handleRemoveProduct(otraOrden.item[i]._id)}>
+        <img src="https://i.ibb.co/6BtwSzC/eliminar.png" alt="eliminar" heigth="20px" width="20px"></img> </button></td>
       </tr>
     )
   }
@@ -20,6 +24,7 @@ export default function Comanda({handleResetComanda, handleNameClient, otraOrden
   for(let i = 0; i < otraOrden.item.length; i++){
     total += otraOrden.item[i].price*otraOrden.item[i].qty;
   }
+
 
   //console.log('itemOrder: ',itemOrder);
 
@@ -56,7 +61,9 @@ export default function Comanda({handleResetComanda, handleNameClient, otraOrden
       </div>
       <div className="btns-comanda">
         <button
-        className="btn-comanda">Enviar comanda</button>
+        className="btn-comanda"
+        
+        >Enviar comanda</button>
         <button 
         className="btn-cancelar"
         onClick={()=> handleResetComanda()}
