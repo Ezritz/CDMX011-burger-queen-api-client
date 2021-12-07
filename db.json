@@ -107,23 +107,53 @@
   ],
   "orders": [
     {
-      "_id":"",
-      "userId":"",
-      "client": "",
-      "products":[{
-        "_id": "13",
-        "name": "Gaseosa 750ml",
-        "price": 10,
-        "image": "https://i.ibb.co/J52gRfg/soda-750.png",
-        "type": "Bebidas",
-        "dateEntry": "2021-26-11",
-        "qty":1
-      }],
+      "_id": "",
+      "userId": "",
       "status": "pending",
-      "dateEntry": "2021-26-11",
-      "dateProcessed": "2021-26-11"
+      "dateEntry": "2021-12-07T21:04:15.468Z",
+      "client": "isa",
+      "products": [
+        {
+          "_id": "01",
+          "name": "Sandwich Jamon",
+          "price": 10,
+          "image": "https://i.ibb.co/qW0DsLr/sandwich.png",
+          "type": "Sandwich",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        },
+        {
+          "_id": "04",
+          "name": "Café con leche",
+          "price": 7,
+          "image": "https://i.ibb.co/zPWrW78/coffee-mug.png",
+          "type": "Bebida",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        },
+        {
+          "_id": "03",
+          "name": "Café Americano",
+          "price": 5,
+          "image": "https://i.ibb.co/symtb8S/coffee.png",
+          "type": "Bebida",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "juanita@burgerqueen.com",
+      "role": "waitress"
+    },
+    {
+      "id": 2,
+      "email": "panchito-c@burgerqueen.com",
+      "role": "chef"
     }
   ]
 }
-
-
