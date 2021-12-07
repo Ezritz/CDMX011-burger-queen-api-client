@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap');
+
+$color-bc-orden: #DFDBDB;
+$color-bc-btn-comanda: #FFE27A;
+$color-border-btn-comanda: #FFC27A;
+$color-text: #DE333F;
+$shadow-btn: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+.container-pendingOrder{
+    text-align: center;
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 16px;
+    width: 236px;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: $color-bc-orden;
+    padding: 10px;
+    p{
+        font-family: 'Rum Raisin', sans-serif;
+        font-size: 30px;
+        margin: 0;
+    }
+}
+
+.btn-finish {
+    width: 145px;
+    height: 40px;
+    border-radius: 10px;
+    border:none;
+    background-color:$color-bc-btn-comanda;
+    box-shadow:$shadow-btn;
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: 20px;
+}
+

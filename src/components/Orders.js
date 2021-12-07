@@ -4,8 +4,10 @@ import myImage from '../images/logoMesero.png';
 import Breakfast from './Breakfast';
 import Lunch from './Lunch';
 import Comanda from './Comanda';
+import Kitchen from './Kitchen';
 import menu from '../data';
 import '../css/orders/Orders.scss';
+import { useKitchen } from '../hooks/useKitchen';
 import { createElements } from '../crud';
 
 export default function Orders() {
@@ -104,6 +106,11 @@ export default function Orders() {
           type="button"
           onClick={() => setActiveMenu('lunch')}>
           Almuerzo y Cena</button>
+        <button
+          
+          type="button"
+          onClick={() => setActiveMenu('kitchen')}>
+          kitchen</button>
       </div>
       <div className="vista-perm">
         <Comanda handleResetComanda={handleResetComanda} handleNameClient={handleNameClient} otraOrden={otraOrden} handleRemoveProduct={handleRemoveProduct} handleSendComanda={handleSendComanda} />
@@ -112,6 +119,9 @@ export default function Orders() {
         )}
         {activeMenu === 'lunch' && (
           <Lunch handleAddProduct={handleAddProduct} handleReduceProduct={handleReduceProduct}/>
+        )}
+        {activeMenu === 'kitchen' && (
+          <Kitchen />
         )}
       </div>
 

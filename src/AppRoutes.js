@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import Orders from './components/Orders';
 import Breakfast from './components/Breakfast';
+import Kitchen from './components/Kitchen';
+
 import { useAuthContext } from './hooks/useAuthContext';
 
 //pages y components
@@ -25,6 +27,12 @@ function BreakfastRoute() {
   const { user } = useAuthContext();
   return user ? <Navigate to='/breakfast'/>: <Navigate to='/lunch'/>
 }
+
+function KitchenRoute() {
+  const {user} = useAuthContext();
+  return user ? <Navigate to='/kitchen'/>: <Navigate to='/login'/>
+}
+
 
 function AppRoutes() {
   const { authIsReady } = useAuthContext();
@@ -57,6 +65,14 @@ function AppRoutes() {
                 </BreakfastRoute>
               }/>
             <Route 
+              path="/kitchen"
+              element={
+               <KitchenRoute>
+                 <Kitchen />
+               </KitchenRoute>
+               
+             }/>
+            <Route 
               path='/login' 
               element={
                 <LoginRoute>
@@ -65,7 +81,7 @@ function AppRoutes() {
               }/>
 
             
-              
+             
           </Routes>
           
         </BrowserRouter>
