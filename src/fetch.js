@@ -1,12 +1,16 @@
-export default async function generalFetch ({path, method, body}) {
-    const res = await fetch('http://localhost:3001/' + path, {
+export default async function generalFetch({path, method, body, cors = 'cors'}) {
+    const res = await fetch(path, {
         method,
         body: JSON.stringify(body),
-        header: {
-            "Content-type": "application/json",
-            "Accept": "application/json"
+        mode: cors,
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Access-Control-Allow-Credentials': true
         }
     })
-    return await res.json();
+    console.log('res: ',res);
+    return res.json();
 }
 
