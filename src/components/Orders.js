@@ -7,7 +7,7 @@ import Comanda from './Comanda';
 import Kitchen from './Kitchen';
 import menu from '../data';
 import '../css/orders/Orders.scss';
-import { useKitchen } from '../hooks/useKitchen';
+
 import { createElements } from '../crud';
 
 export default function Orders() {
@@ -79,6 +79,10 @@ export default function Orders() {
   }
   console.log(otraOrden)
 
+  if(activeMenu==='kitchen') {
+    return <Kitchen />
+  }
+  
   return (
 
     <div className="container">
@@ -120,9 +124,7 @@ export default function Orders() {
         {activeMenu === 'lunch' && (
           <Lunch handleAddProduct={handleAddProduct} handleReduceProduct={handleReduceProduct}/>
         )}
-        {activeMenu === 'kitchen' && (
-          <Kitchen />
-        )}
+        
       </div>
 
 
