@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap');
+
+$color-background: #DDB892;
+$color-bc-header: #8D563A;
+$color-btn-logout: #E6CCB2;
+$color-bc-orden: #DFDBDB;
+$color-bc-btn-comanda: #FFE27A;
+$color-border-btn-comanda: #FFC27A;
+$color-text: #DE333F;
+$shadow-btn: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+.header-kitchen{
+    background-color: $color-bc-header;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 120px;
+
+}
+
+.logout-kitchen{
+    width: 145px;
+    height: 40px;
+    border-radius: 10px;
+    border:none;
+    background-color:$color-btn-logout;
+    box-shadow:$shadow-btn;
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: 20px;
+}
+.user-kitchen {
+    width: 90px;
+    height: 90px;
+}
+
+.container-orden{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+}
