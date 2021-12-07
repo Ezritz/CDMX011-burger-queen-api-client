@@ -16,22 +16,22 @@ export default function Orders() {
 
   // const [clientName, setClientName] = usestate('');
   const [otraOrden, setOtraOrden] = useState({
-    '_id': '',
-    'userId': '',
-    'status': 'pending',
-    'dateEntry': new Date(),
-    'client': '',
-      'products': [],
+    "_id": "",
+    "userId": "",
+    "status": "pending",
+    "dateEntry": new Date(),
+    "client": "",
+    "products": [],
   });
 
   const handleResetComanda=() => {
     setOtraOrden({
-      '_id': '',
-      'userId': '',
-      'status': 'pending',
-      'dateEntry': new Date(),
-      'client': '',
-      'products': [],
+      "_id": "",
+      "userId": "",
+      "status": "pending",
+      "dateEntry": new Date(),
+      "client": "",
+      "products": [],
     })
   }
 
@@ -73,11 +73,9 @@ export default function Orders() {
   }
 
   const handleSendComanda = async () => {
-    console.log('error',otraOrden)
-    await createElements('orders', otraOrden);
-    
+    await createElements(otraOrden);
   }
-
+  console.log(otraOrden)
 
   return (
 
