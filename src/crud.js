@@ -2,27 +2,26 @@ import generalFetch from './fetch';
 
 async function getElements (path) {
     const res = await generalFetch({
-        path: 'http://localhost:3001/'+path,
+        path: path,
         method: 'GET'
     });
     
     return res;
 }
 
-async function createElements (body) {
+async function createElements (path,body) {
     const res = await generalFetch({
-        path: "http://4e59c0e3-8e77-451f-95bb-50136be77174.mock.pstmn.io/orders",
+        path: path,
         method: 'POST',
-        body: body,
-        cors: 'no-cors',
+        body: body
     });
     
     return res.data;
 }
 
-async function deleteElements (path, id ) {
+async function deleteElements (path, id) {
     const res = await generalFetch({
-        path: 'http://localhost:3001/'+path + '/' + id,
+        path: path + '/' + id,
         method: 'DELETE'
     });
     
@@ -31,7 +30,7 @@ async function deleteElements (path, id ) {
 
 async function updateElements (path, id, newBody) {
     const res = await generalFetch({
-        path: 'http://localhost:3001/'+path + '/' + id,
+        path: path + '/' + id,
         method: 'PATCH',
         body: newBody
     });

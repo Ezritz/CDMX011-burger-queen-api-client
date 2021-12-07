@@ -75,7 +75,7 @@ export default function Orders() {
   }
 
   const handleSendComanda = async () => {
-    await createElements(otraOrden);
+    await createElements('orders', otraOrden);
   }
   console.log(otraOrden)
 
