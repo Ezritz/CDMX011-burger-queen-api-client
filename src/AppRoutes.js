@@ -3,10 +3,17 @@ import Login from './components/Login';
 import Orders from './components/Orders';
 import Kitchen from './components/Kitchen';
 import { useState, useEffect } from 'react';
-
+import {
+  getElements
+} from './crud';
 import { useAuthContext } from './hooks/useAuthContext';
 
 //pages y components
+
+function KitchenRoute({children}) {
+  const { user } = useAuthContext();
+  return user ? children : <Navigate to='/login'/>
+}
 
 function OrdersRoute({ children }) {
   const { user } = useAuthContext();
@@ -15,24 +22,57 @@ function OrdersRoute({ children }) {
 
 function LoginRoute({ children }) {
   const { user } = useAuthContext();
-  return user ? <Navigate to='/orders'/>: children;
+  if(user){
+    console.log('hay usuario');
+    let userType = Routing(user);
+    console.log('userType', userType);
+    switch(userType){
+      case 'chef': 
+      console.log('kitchen')  
+      return <Navigate to='/kitchen' />;
+      case 'waitress': 
+      console.log('orders')
+      return <Navigate to='/orders' />;
+      
+    }
+    
+  }
+  
+  return children;
+}
+
+function Routing(user) {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    getElements('users').then((data) => setData(data))
+  }, [])
+  let type;
+  let userData = data.filter((elem) => elem.email === user.email);
+  type = userData[0].role;
+  console.log(type);
+  return type;
 }
 
 function HomeRoute() {
   const { user } = useAuthContext();
-  return user ? <Navigate to='/orders'/>: <Navigate to='/login'/>
-}
-
-
-function KitchenRoute() {
+  if(user){
+    Routing(user).then((userType) => {
+      switch(userType){
+        case 'chef': 
+        console.log('kitchen')  
+        return <Navigate to='/kitchen' />;
+        case 'waitress': 
+        console.log('orders')
+        return <Navigate to='/orders' />;
+        default : 
+        console.log('login')
+        return <Navigate to='/login' />;
+      }
+    })    
+  }
   
-  const { user } = useAuthContext();
-   // if(userChef === 'chef') {
-    return user ? <Navigate to='/kitchen'/>: <Navigate to='/login'/>
-   // }
-  
+  return <Navigate to='/login'/>
 }
-
 
 function AppRoutes() {
   const { authIsReady } = useAuthContext();
