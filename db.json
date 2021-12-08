@@ -142,6 +142,34 @@
         }
       ],
       "id": 1
+    },
+    {
+      "_id": "",
+      "userId": "",
+      "status": "pending",
+      "dateEntry": "2021-12-08T16:55:43.343Z",
+      "client": "isa",
+      "products": [
+        {
+          "_id": "02",
+          "name": "Sandwich Pollo",
+          "price": 15,
+          "image": "https://i.ibb.co/qW0DsLr/sandwich.png",
+          "type": "Sandwich",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        },
+        {
+          "_id": "10",
+          "name": "Agua 500ml",
+          "price": 5,
+          "image": "https://i.ibb.co/L6T0kRd/agua-500.png",
+          "type": "Bebidas",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        }
+      ],
+      "id": 2
     }
   ],
   "users": [
