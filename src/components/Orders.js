@@ -4,7 +4,6 @@ import myImage from '../images/logoMesero.png';
 import Breakfast from './Breakfast';
 import Lunch from './Lunch';
 import Comanda from './Comanda';
-import Kitchen from './Kitchen';
 import menu from '../data';
 import '../css/orders/Orders.scss';
 
@@ -79,9 +78,7 @@ export default function Orders() {
   }
   console.log(otraOrden)
 
-  if(activeMenu==='kitchen') {
-    return <Kitchen />
-  }
+  
   
   return (
 
@@ -110,11 +107,7 @@ export default function Orders() {
           type="button"
           onClick={() => setActiveMenu('lunch')}>
           Almuerzo y Cena</button>
-        <button
-          
-          type="button"
-          onClick={() => setActiveMenu('kitchen')}>
-          kitchen</button>
+       
       </div>
       <div className="vista-perm">
         <Comanda handleResetComanda={handleResetComanda} handleNameClient={handleNameClient} otraOrden={otraOrden} handleRemoveProduct={handleRemoveProduct} handleSendComanda={handleSendComanda} />
