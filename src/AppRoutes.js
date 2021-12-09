@@ -40,24 +40,32 @@ function LoginRoute({ children }) {
   
   return children;
 }
-
 function Routing(user) {
   const [data, setData] = useState([]);
+  const [type, setType] = useState();
   useEffect(() => {
-    getElements('users').then((data) => setData(data))
+    
+    getElements('users').then((data) => {setData(data) 
+      let userData = data.filter((elem) => elem.email === user.email);
+      setType(userData[0].role);
+      console.log('userData', userData);
+    })
+    
+    
   }, [])
-  let type;
-  let userData = data.filter((elem) => elem.email === user.email);
-  type = userData[0].role;
-  console.log(type);
+  
+  
+  
+  console.log('Data', data);
+  console.log('type', type);
   return type;
 }
 
 function HomeRoute() {
   const { user } = useAuthContext();
   if(user){
-    Routing(user).then((userType) => {
-      switch(userType){
+    // Routing(user).then((userType) => {
+      switch(Routing(user)){
         case 'chef': 
         console.log('kitchen')  
         return <Navigate to='/kitchen' />;
@@ -68,7 +76,7 @@ function HomeRoute() {
         console.log('login')
         return <Navigate to='/login' />;
       }
-    })    
+    //}    
   }
   
   return <Navigate to='/login'/>
