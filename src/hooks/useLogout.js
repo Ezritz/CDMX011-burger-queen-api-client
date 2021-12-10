@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { projectAuth } from '../firebase/config';
+import Cookies from 'universal-cookie';
 import { useAuthContext } from './useAuthContext'; 
 
+const cookies= new Cookies();
 export const useLogout = () => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
@@ -14,7 +15,7 @@ export const useLogout = () => {
 
     // sign the user out
     try {
-      await projectAuth.signOut();
+      await 
 
       // dispatch logout action
       dispatch({ type: 'LOGOUT' });

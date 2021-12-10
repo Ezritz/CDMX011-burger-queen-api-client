@@ -6,11 +6,12 @@ import Lunch from './Lunch';
 import Comanda from './Comanda';
 import menu from '../data';
 import '../css/orders/Orders.scss';
-
+import Cookies from 'universal-cookie';
 import { createElements } from '../crud';
-
+import { Logout } from '../lib/fakeServer';
+const cookies= new Cookies()
 export default function Orders() {
-  const { logout } = useLogout();
+  
   const [activeMenu, setActiveMenu] = useState('');
   
   
@@ -87,8 +88,8 @@ export default function Orders() {
       <div className="header">
         <img src={myImage} alt="img-waiter" className="user" />
         <div className='cont-name-btn'>
-          <p>Juanita</p>
-          <button className='btn-logout' onClick={logout}>Cerrar Sesión</button>
+          <p>{cookies.get("name")}</p>
+          <button className='btn-logout' onClick={Logout}>Cerrar Sesión</button>
 
         </div>
         <div className="cont-ntf">
