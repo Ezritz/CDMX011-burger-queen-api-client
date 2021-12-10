@@ -3,10 +3,12 @@ import { useLogout } from '../hooks/useLogout';
 import '../css/kitchen/kitchen.scss';
 import myImage from '../images/logoMesero.png';
 import PendingOrders from './PendingOrders';
+import Cookies from 'universal-cookie';
 import {
     getElements
 } from '../crud';
 
+const cookies= new Cookies();
 export default function Kitchen() {
     const [data, setData] = useState([]);
     const { logout } = useLogout();
@@ -30,7 +32,7 @@ export default function Kitchen() {
         <div>
             <div className="header-kitchen">
                 <img src={myImage} className="user-kitchen"></img>
-                <p></p>
+                <p>{cookies.get("name")}</p>
                 <button 
                 className="logout-kitchen"
                 onClick={logout}>cerrar sesion</button>

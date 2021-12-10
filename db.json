@@ -176,12 +176,24 @@
     {
       "id": 1,
       "email": "juanita@burgerqueen.com",
-      "role": "waitress"
+      "name": "Juanita",
+      "password": "12345678",
+      "role": {
+        "admin": false, 
+        "waiter": true,
+        "kitchen":false
+      }
     },
     {
       "id": 2,
       "email": "panchito-c@burgerqueen.com",
-      "role": "chef"
+      "name": "Panchito",
+      "password": "123456",
+      "role": {
+        "admin": false, 
+        "waiter": false,
+        "kitchen":true
+      }
     }
   ]
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { projectAuth } from '../firebase/config';
+import {Login} from '../lib/fakeServer';
 import {useAuthContext } from './useAuthContext';
 
 export const useLogin = () => {
@@ -14,10 +14,10 @@ export const useLogin = () => {
 
     // sign in user
     try {
-      const res = await projectAuth.signInWithEmailAndPassword(email,password);
+      const res = await Login(email,password);
 
       // dispatch logIn action
-      dispatch({ type: 'LOGIN', payload: res.user });
+      // dispatch({ type: 'LOGIN', payload: res.user });
 
       // update state
       if (!isCancelled) {
