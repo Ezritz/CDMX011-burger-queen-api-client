@@ -8,7 +8,7 @@ import { Logout } from '../lib/fakeServer';
 import {
     getElements, updateElements
 } from '../crud';
-
+import Swal from 'sweetalert2'
 
 
 const cookies= new Cookies();
@@ -16,13 +16,15 @@ export default function Kitchen() {
     const [data, setData] = useState([]);
     
 
-    const handleChangeStatus = (id, element) => {
+    const handleChangeStatus = (id, element, result) => {
         updateElements('orders', id, { ...element, "status": 'delivering', "dateProcessed":new Date()} )
         getElements('orders').then((data) => setData(data));
+        Swal.fire(`La orden tardo en prepararse: ${result[0]}: ${result[1]}: ${result[2]}`)
     }
 
     useEffect(() => {
         getElements('orders').then((data) => setData(data));
+
     },[]);
     
     let  ordersPending= data.filter((elem) => elem.status === 'pending');

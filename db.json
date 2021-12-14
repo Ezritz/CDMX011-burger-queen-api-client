@@ -109,9 +109,9 @@
     {
       "_id": "",
       "userId": "",
-      "status": "delivering",
+      "status": "pending",
       "dateEntry": "2021-12-07T21:04:15.468Z",
-      "dateProcessed": "2021-12-14T04:31:36.456Z",
+      "dateProcessed": "2021-12-14T17:54:38.271Z",
       "client": "isa",
       "products": [
         {
@@ -148,9 +148,9 @@
     {
       "_id": "",
       "userId": "",
-      "status": "delivering",
+      "status": "pending",
       "dateEntry": "2021-12-08T16:55:43.343Z",
-      "dateProcessed": "2021-12-14T04:31:42.157Z",
+      "dateProcessed": "2021-12-14T17:54:27.408Z",
       "client": "isa",
       "products": [
         {
@@ -178,9 +178,9 @@
     {
       "_id": "",
       "userId": "",
-      "status": "delivering",
+      "status": "pending",
       "dateEntry": "2021-12-13T15:46:13.256Z",
-      "dateProcessed": "2021-12-14T04:31:43.957Z",
+      "dateProcessed": "2021-12-14T17:54:31.701Z",
       "client": "isa",
       "products": [
         {
