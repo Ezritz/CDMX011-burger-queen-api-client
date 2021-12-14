@@ -53,8 +53,11 @@ export function Logout () {
     cookies.remove("name", {path:'/'});
 
     console.log(cookies.get("id"));
-    cookies.get("id" === undefined)
-    window.location.href= '/';
+    if(!cookies.get("id")) {
+        window.location.href= '/';
+    }
+    
+    
     
     
 }
