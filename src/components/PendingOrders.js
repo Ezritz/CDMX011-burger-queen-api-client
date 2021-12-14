@@ -2,6 +2,7 @@ import '../css/kitchen/pendingOrders.scss';
 import { useEffect, useState } from 'react';
 import { updateElements } from '../crud';
 
+
 export default function PendingOrders ({timer, product, id, handleChangeStatus, element}) {
     let productsOrder = [];
     const [contHours, setContHours] = useState(0);
@@ -70,7 +71,8 @@ export default function PendingOrders ({timer, product, id, handleChangeStatus, 
             <hr/>
             <button 
             className="btn-finish"
-            onClick= {()=>handleChangeStatus(id, element)}
+            onClick= {()=>{handleChangeStatus(id, element, result)}}
+            
             >Terminar pedido</button>
         </div>
     )
