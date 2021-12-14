@@ -19,7 +19,10 @@ $shadow-btn: 4px 4px 4px rgba(0, 0, 0, 0.25);
     justify-content: space-evenly;
     width: 100%;
     height: 120px;
-
+    p {
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: 40px;
+    }
 }
 
 .logout-kitchen{

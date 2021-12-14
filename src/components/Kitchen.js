@@ -6,28 +6,37 @@ import PendingOrders from './PendingOrders';
 import Cookies from 'universal-cookie';
 import { Logout } from '../lib/fakeServer';
 import {
-    getElements
+    getElements, updateElements
 } from '../crud';
+
+
 
 const cookies= new Cookies();
 export default function Kitchen() {
     const [data, setData] = useState([]);
     
-    useEffect(() => {
-      getElements('orders').then((data) => setData(data))
-    }, [])
-  
 
+    const handleChangeStatus = (id, element) => {
+        updateElements('orders', id, { ...element, "status": 'delivering', "dateProcessed":new Date()} )
+        getElements('orders').then((data) => setData(data));
+    }
+
+    useEffect(() => {
+        getElements('orders').then((data) => setData(data));
+    },[]);
+    
     let  ordersPending= data.filter((elem) => elem.status === 'pending');
-    let  orders= ordersPending.map((element) => {
+    let orders = ordersPending.map((element) => {
         return (
             <PendingOrders 
             product={element.products}
             timer={element.dateEntry}
+            id={element.id}
+            handleChangeStatus={handleChangeStatus}
             />
         )
-    })
-    
+    });
+
     return (
         <div>
             <div className="header-kitchen">
