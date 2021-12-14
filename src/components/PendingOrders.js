@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { updateElements } from '../crud';
 
 
-export default function PendingOrders ({timer, product, id, handleChangeStatus, element}) {
+export default function PendingOrders ({timer, product, id, handleChangeStatus, handleChangeDelivering, element}) {
     let productsOrder = [];
     const [contHours, setContHours] = useState(0);
     const [contMinutes, setContMinutes] = useState(0);
@@ -71,7 +71,8 @@ export default function PendingOrders ({timer, product, id, handleChangeStatus, 
             <hr/>
             <button 
             className="btn-finish"
-            onClick= {()=>{handleChangeStatus(id, element, result)}}
+            onClick= {()=>{handleChangeStatus(id, element, result)
+            handleChangeDelivering()}}
             
             >Terminar pedido</button>
         </div>

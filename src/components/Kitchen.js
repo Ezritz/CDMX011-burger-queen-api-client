@@ -18,15 +18,21 @@ export default function Kitchen() {
 
     const handleChangeStatus = (id, element, result) => {
         updateElements('orders', id, { ...element, "status": 'delivering', "dateProcessed":new Date()} )
-        getElements('orders').then((data) => setData(data));
+         setData([]);
         Swal.fire(`La orden tardo en prepararse: ${result[0]}: ${result[1]}: ${result[2]}`)
+
     }
 
     useEffect(() => {
         getElements('orders').then((data) => setData(data));
 
     },[]);
+
+    const handleChangeDelivering = () => {
+        getElements('orders').then((data) => setData(data.filter((element) => element.status === 'pending')))
+    }
     
+
     let  ordersPending= data.filter((elem) => elem.status === 'pending');
     let orders = ordersPending.map((element) => {
         return (
@@ -35,6 +41,7 @@ export default function Kitchen() {
             timer={element.dateEntry}
             id={element.id}
             handleChangeStatus={handleChangeStatus}
+            handleChangeDelivering={handleChangeDelivering}
             />
         )
     });
