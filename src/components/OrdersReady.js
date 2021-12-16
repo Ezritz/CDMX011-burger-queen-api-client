@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import myImage from '../images/logoMesero.png';
 import DeliveredOrders from '../components/DeliveringOrders';
 import Cookies from 'universal-cookie';
-import { Logout } from '../lib/fakeServer';
+
 import {
     getElements, updateElements
 } from '../crud';
@@ -13,17 +13,20 @@ export default function OrdersReady() {
 
     const [data, setData] = useState([]);
     
+    const handleChangeRoute =() => {
+        window.location.href = '/orders'
+    }
 
     const handleChangeStatus = (id,element, client) => {
         updateElements('orders', id, { ...element, "status": 'delivered', "dateProcessed":new Date()} )
-         setData([]);
+        setData([]);
+        
         Swal.fire(`La orden ${id} fue entregada con exito`)
 
     }
 
     useEffect(() => {
         getElements('orders').then((data) => setData(data));
-
     },[]);
 
     const handleChangeDelivered = () => {
@@ -51,7 +54,7 @@ export default function OrdersReady() {
                 <p>{cookies.get("name")}</p>
                 <button 
                 className="logout-kitchen"
-                onClick={Logout}>cerrar sesion</button>
+                onClick={handleChangeRoute}>Regresar a menu</button>
             </div>
             <div className="container-orden">{orders}</div>
             

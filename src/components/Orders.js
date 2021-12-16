@@ -24,7 +24,7 @@ export default function Orders() {
   useEffect(() => {
     handleChangeNotif()
     
-  },[dataLength])
+  },[setDataLength])
   
   // const [clientName, setClientName] = usestate('');
   const [otraOrden, setOtraOrden] = useState({
@@ -117,13 +117,12 @@ export default function Orders() {
 
         </div>
         <div className="cont-ntf">
-          <button 
-          
+          <button
+          className="total-ntf"
           type="button"
-          onClick={handleChangeRoute}>
+          onClick={handleChangeRoute}>{dataLength}
           </button>
-          <p className="p-ntf">{dataLength}</p>
-          
+         
         </div>
 
         <button

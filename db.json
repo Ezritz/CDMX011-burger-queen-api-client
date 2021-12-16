@@ -148,7 +148,7 @@
     {
       "_id": "",
       "userId": "",
-      "status": "delivering",
+      "status": "delivered",
       "dateEntry": "2021-12-08T16:55:43.343Z",
       "client": "isa",
       "products": [
@@ -172,12 +172,13 @@
         }
       ],
       "id": 2,
-      "deliveringTime": "2021-12-14T01:59:56.081Z"
+      "deliveringTime": "2021-12-14T01:59:56.081Z",
+      "dateProcessed": "2021-12-16T17:22:35.069Z"
     },
     {
       "_id": "",
       "userId": "",
-      "status": "pending",
+      "status": "delivering",
       "dateEntry": "2021-12-13T15:46:13.256Z",
       "client": "lidia",
       "products": [
@@ -219,7 +220,113 @@
         }
       ],
       "id": 3,
-      "deliveringTime": "2021-12-14T01:59:56.104Z"
+      "deliveringTime": "2021-12-14T01:59:56.104Z",
+      "dateProcessed": "2021-12-16T17:24:12.028Z"
+    },
+    {
+      "_id": "",
+      "userId": "",
+      "status": "delivering",
+      "dateEntry": "2021-12-16T17:18:00.317Z",
+      "client": "lidia",
+      "products": [
+        {
+          "_id": "02",
+          "name": "Sandwich Pollo",
+          "price": 15,
+          "image": "https://i.ibb.co/qW0DsLr/sandwich.png",
+          "type": "Sandwich",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        },
+        {
+          "_id": "10",
+          "name": "Agua 500ml",
+          "price": 5,
+          "image": "https://i.ibb.co/L6T0kRd/agua-500.png",
+          "type": "Bebidas",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        },
+        {
+          "_id": "11",
+          "name": "Agua 750ml",
+          "price": 7,
+          "image": "https://i.ibb.co/GTgSWK0/agua-750.png",
+          "type": "Bebidas",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        }
+      ],
+      "id": 4,
+      "dateProcessed": "2021-12-16T17:19:46.088Z"
+    },
+    {
+      "_id": "",
+      "userId": "",
+      "status": "delivered",
+      "dateEntry": "2021-12-16T17:24:36.658Z",
+      "client": "anita",
+      "products": [
+        {
+          "_id": "08",
+          "name": "Papas fritas",
+          "price": 5,
+          "image": "https://i.ibb.co/tBPkSfv/papitas.png",
+          "type": "Acompañamiento",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        },
+        {
+          "_id": "06",
+          "name": "Burger Sencilla",
+          "price": 10,
+          "image": "https://i.ibb.co/XjyPggL/hamburguesa.png",
+          "type": "Hamburguesas",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        },
+        {
+          "_id": "12",
+          "name": "Gaseosa 500ml",
+          "price": 7,
+          "image": "https://i.ibb.co/qyz2jCN/soda-500.png",
+          "type": "Bebidas",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        }
+      ],
+      "id": 5,
+      "dateProcessed": "2021-12-16T17:58:42.864Z"
+    },
+    {
+      "_id": "",
+      "userId": "",
+      "status": "delivered",
+      "dateEntry": "2021-12-16T17:38:01.957Z",
+      "client": "anitaaaa",
+      "products": [
+        {
+          "_id": "01",
+          "name": "Sandwich Jamon",
+          "price": 10,
+          "image": "https://i.ibb.co/qW0DsLr/sandwich.png",
+          "type": "Sandwich",
+          "dateEntry": "2021-26-11",
+          "qty": 2
+        },
+        {
+          "_id": "05",
+          "name": "Jugo de frutas",
+          "price": 7,
+          "image": "https://i.ibb.co/L1JnkYk/orange-juice-1.png",
+          "type": "Bebida",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        }
+      ],
+      "id": 6,
+      "dateProcessed": "2021-12-16T17:58:01.005Z"
     }
   ],
   "users": [
