@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import Orders from './components/Orders';
 import Kitchen from './components/Kitchen';
+import OrdersReady from './components/OrdersReady';
 
 //pages y components
 /*
@@ -101,6 +102,12 @@ function AppRoutes() {
                 
               }/>
             
+            <Route 
+            path="/ordersToDelivered"
+            element={
+              <OrdersReady />
+            }
+            />
             <Route 
               path='/' 
               element={

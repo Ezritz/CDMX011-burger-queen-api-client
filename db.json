@@ -111,7 +111,6 @@
       "userId": "",
       "status": "delivering",
       "dateEntry": "2021-12-07T21:04:15.468Z",
-      "dateProcessed": "2021-12-14T19:34:01.390Z",
       "client": "isa",
       "products": [
         {
@@ -150,7 +149,6 @@
       "userId": "",
       "status": "delivering",
       "dateEntry": "2021-12-08T16:55:43.343Z",
-      "dateProcessed": "2021-12-14T19:34:03.528Z",
       "client": "isa",
       "products": [
         {
@@ -178,10 +176,9 @@
     {
       "_id": "",
       "userId": "",
-      "status": "delivering",
+      "status": "pending",
       "dateEntry": "2021-12-13T15:46:13.256Z",
-      "dateProcessed": "2021-12-14T19:34:05.362Z",
-      "client": "isa",
+      "client": "lidia",
       "products": [
         {
           "_id": "01",

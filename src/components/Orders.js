@@ -9,6 +9,7 @@ import '../css/orders/Orders.scss';
 import Cookies from 'universal-cookie';
 import { createElements } from '../crud';
 import { Logout } from '../lib/fakeServer';
+import OrdersReady from '../components/OrdersReady';
 const cookies= new Cookies()
 export default function Orders() {
   
@@ -79,6 +80,9 @@ export default function Orders() {
   }
   console.log(otraOrden)
 
+  const handleChangeRoute = ()=>{
+    window.location.href = '/ordersToDelivered'
+  }
   
   
   return (
@@ -93,6 +97,11 @@ export default function Orders() {
 
         </div>
         <div className="cont-ntf">
+          <button 
+          
+          type="button"
+          onClick={handleChangeRoute}>
+          </button>
           <p className="p-ntf">0</p>
           
         </div>
