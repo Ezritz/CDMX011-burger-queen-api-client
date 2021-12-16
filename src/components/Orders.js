@@ -9,14 +9,23 @@ import '../css/orders/Orders.scss';
 import Cookies from 'universal-cookie';
 import { createElements } from '../crud';
 import { Logout } from '../lib/fakeServer';
+import { useEffect } from 'react';
 import OrdersReady from '../components/OrdersReady';
+import { getElements } from '../crud';
+
 const cookies= new Cookies()
 export default function Orders() {
   
   const [activeMenu, setActiveMenu] = useState('');
+  const [data, setData] = useState([]);
+  const [dataLength, setDataLength] = useState(0);
   
   
-
+  useEffect(() => {
+    handleChangeNotif()
+    
+  },[dataLength])
+  
   // const [clientName, setClientName] = usestate('');
   const [otraOrden, setOtraOrden] = useState({
     "_id": "",
@@ -42,6 +51,17 @@ export default function Orders() {
     setOtraOrden({...otraOrden, client: newName, products:[...otraOrden.products]});
 
   }
+  
+  
+  const handleChangeNotif = () => {
+    getElements('orders').then((data) => {setData(data)
+      let result = data.filter((elem) => elem.status === 'delivering');
+      setData(result);
+      setDataLength(result.length)
+    })
+    
+  }
+  
 
   const handleAddProduct = (id) => {
     
@@ -54,7 +74,7 @@ export default function Orders() {
       setOtraOrden({...otraOrden,products:[...otraOrden.products,{...prod, qty:1}]});
       
     }
-    console.log(otraOrden);
+   
   }
   const handleReduceProduct= (id) => {
     let exist= otraOrden.products.find((elem) => elem._id === id);
@@ -78,7 +98,7 @@ export default function Orders() {
   const handleSendComanda = async () => {
     await createElements('orders', otraOrden);
   }
-  console.log(otraOrden)
+  
 
   const handleChangeRoute = ()=>{
     window.location.href = '/ordersToDelivered'
@@ -102,7 +122,7 @@ export default function Orders() {
           type="button"
           onClick={handleChangeRoute}>
           </button>
-          <p className="p-ntf">0</p>
+          <p className="p-ntf">{dataLength}</p>
           
         </div>
 
