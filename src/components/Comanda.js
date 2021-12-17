@@ -63,7 +63,8 @@ export default function Comanda({handleResetComanda, handleNameClient, otraOrden
       <div className="btns-comanda">
         <button
         className="btn-comanda"
-        onClick={()=> handleSendComanda()}
+        onClick={()=> {handleSendComanda()
+        handleResetComanda()}}
         >Enviar comanda</button>
         <button 
         className="btn-cancelar"
