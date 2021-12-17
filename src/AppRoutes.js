@@ -3,6 +3,7 @@ import Login from './components/Login';
 import Orders from './components/Orders';
 import Kitchen from './components/Kitchen';
 import OrdersReady from './components/OrdersReady';
+import AdminProfile from './components/AdminProfile';
 
 //pages y components
 /*
@@ -106,6 +107,12 @@ function AppRoutes() {
             path="/ordersToDelivered"
             element={
               <OrdersReady />
+            }
+            />
+            <Route 
+            path="/admin"
+            element={
+              <AdminProfile />
             }
             />
             <Route 

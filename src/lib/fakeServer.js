@@ -1,5 +1,6 @@
 import Cookies from 'universal-cookie';
 import {getElements} from '../crud';
+import Swal from 'sweetalert2'
 
 const cookies= new Cookies()
 
@@ -15,9 +16,9 @@ export async function Login (email, password) {
             return elem.password === password;
         })
         if(userEmail.length <= 0) {
-            alert('email incorrecto')
+            Swal('email incorrecto')
         } else if(userPassword <= 0){
-            alert('Contrasenña incorrecta')
+            Swal('Contrasenña incorrecta')
         }
         console.log(userPassword)
         let userLogin = userPassword[0];
@@ -29,13 +30,13 @@ export async function Login (email, password) {
         cookies.set("name", userLogin.name,{path:'/'});
 
         if(cookies.get('admin')==='true'){
-            // window.location.href= '/admin'
-            alert('este usuario es administrador')
-          }else if(cookies.get('waiter')=== 'true'){
-          window.location.href= '/orders'
-          }else if(cookies.get('kitchen')=== "true"){
-              window.location.href= '/kitchen'
-          }
+            window.location.href= '/admin';
+            
+        }else if(cookies.get('waiter')=== 'true'){
+          window.location.href= '/orders';
+        }else if(cookies.get('kitchen')=== "true"){
+            window.location.href= '/kitchen';
+        }
         
     })
 

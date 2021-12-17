@@ -408,6 +408,17 @@
         "waiter": false,
         "kitchen": true
       }
+    },
+    {
+      "id": 2,
+      "email": "admin@burgerqueen.com",
+      "name": "Ruby",
+      "password": "1234567",
+      "role": {
+        "admin": true,
+        "waiter": false,
+        "kitchen": false
+      }
     }
   ]
 }
