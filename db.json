@@ -410,7 +410,7 @@
       }
     },
     {
-      "id": 2,
+      "id": 3,
       "email": "admin@burgerqueen.com",
       "name": "Ruby",
       "password": "1234567",
@@ -419,6 +419,50 @@
         "waiter": false,
         "kitchen": false
       }
+    },
+    {
+      "email": "isa@bqc.com",
+      "name": "isa",
+      "password": "1234567",
+      "role": {
+        "admin": false,
+        "waiter": true,
+        "kitchen": false
+      },
+      "id": 4
+    },
+    {
+      "email": "lidia@bqc.com",
+      "name": "lidia",
+      "password": "12345678",
+      "role": {
+        "admin": false,
+        "waiter": true,
+        "kitchen": false
+      },
+      "id": 5
+    },
+    {
+      "email": "lidia2@bqc.com",
+      "name": "lidia2",
+      "password": "1234567",
+      "role": {
+        "admin": false,
+        "waiter": false,
+        "kitchen": true
+      },
+      "id": 6
+    },
+    {
+      "email": "isa2@bqc.com",
+      "name": "isa2",
+      "password": "123456789",
+      "role": {
+        "admin": true,
+        "waiter": false,
+        "kitchen": false
+      },
+      "id": 7
     }
   ]
 }
