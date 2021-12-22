@@ -1,5 +1,5 @@
 export default async function generalFetch({path, method, body}) {
-    const res = await fetch('http://localhost:3001/' + path, {
+    const res = await fetch('https://fake-server-bqac.herokuapp.com/' + path, {
         method,
         body: JSON.stringify(body),
         headers: {
