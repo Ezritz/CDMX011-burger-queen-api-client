@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function CreateUsers({handleCreateUser, handleChangeName,handleChangeEmail, handleChangePassword, handleChangeRole, changeData, role}) {
+export default function CreateUsers({handleCreateUser, handleChangeName,handleChangeEmail, handleChangePassword, handleChangeRole, changeData, role, handleResetUser}) {
     
 
     return(
@@ -35,7 +35,9 @@ export default function CreateUsers({handleCreateUser, handleChangeName,handleCh
             <option value="chef">Cocinero</option>
             </select> <br/>
             <button
-            onClick={()=> handleCreateUser()}
+            onClick={()=> {handleCreateUser()
+                handleResetUser()}
+            }
             >Agregar Usuario</button>
         </div>
     )
