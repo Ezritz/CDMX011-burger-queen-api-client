@@ -384,6 +384,34 @@
         }
       ],
       "id": 8
+    },
+    {
+      "_id": "",
+      "userId": "",
+      "status": "pending",
+      "dateEntry": "2021-12-22T02:09:22.352Z",
+      "client": "alfredo",
+      "products": [
+        {
+          "_id": "02",
+          "name": "Sandwich Pollo",
+          "price": 15,
+          "image": "https://i.ibb.co/qW0DsLr/sandwich.png",
+          "type": "Sandwich",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        },
+        {
+          "_id": "04",
+          "name": "Café con leche",
+          "price": 7,
+          "image": "https://i.ibb.co/zPWrW78/coffee-mug.png",
+          "type": "Bebida",
+          "dateEntry": "2021-26-11",
+          "qty": 1
+        }
+      ],
+      "id": 9
     }
   ],
   "users": [
@@ -463,6 +491,28 @@
         "kitchen": false
       },
       "id": 7
+    },
+    {
+      "email": "ahri@bqc.com",
+      "name": "ahri",
+      "password": "123456789",
+      "role": {
+        "admin": false,
+        "waiter": true,
+        "kitchen": false
+      },
+      "id": 8
+    },
+    {
+      "email": "venus@bqc.com",
+      "name": "venus",
+      "password": "1234567",
+      "role": {
+        "admin": false,
+        "waiter": false,
+        "kitchen": true
+      },
+      "id": 9
     }
   ]
 }

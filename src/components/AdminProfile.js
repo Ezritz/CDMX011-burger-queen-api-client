@@ -87,6 +87,19 @@ export default function AdminProfile() {
          setData([]);
         Swal.fire(`El rol de usuario ha sido modificado`)
     }
+    const handleResetUser=() => {
+        setRole('');
+        setChangeData({
+            "email":'',
+            "name": '',
+            "password":'',
+            "role": {
+                "admin":false,
+                "waiter": false,
+                "kitchen": false
+            }
+        })
+      }
 
     useEffect(() => {
         getElements('users').then((data) => setData(data));
@@ -108,7 +121,7 @@ export default function AdminProfile() {
                 onClick={Logout}>cerrar sesion</button>
             </div>
             <div className="container-orden">
-                <CreateUsers handleCreateUser={handleCreateUser} handleChangeName={handleChangeName} changeData={changeData} handleChangeEmail={handleChangeEmail} handleChangePassword={handleChangePassword} handleChangeRole={handleChangeRole} role={role}/>
+                <CreateUsers handleCreateUser={handleCreateUser} handleChangeName={handleChangeName} changeData={changeData} handleChangeEmail={handleChangeEmail} handleChangePassword={handleChangePassword} handleChangeRole={handleChangeRole} role={role} handleResetUser={handleResetUser}/>
                 <EditUsers data={data} handleChangeDataUser={handleChangeDataUser}/>
                 
             </div>
