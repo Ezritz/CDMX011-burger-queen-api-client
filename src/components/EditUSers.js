@@ -11,7 +11,7 @@ export default function EditUsers({data, handleChangeDataUser, handleDeleteUser 
                   <td>{data[i].password}</td>
                   <td>Admin</td>
                   <td><button
-                  onClick={()=> handleChangeDataUser()}
+                  onClick={()=> handleChangeDataUser(data[i], data[i].role)}
                   >Editar</button></td>
                   <td><button
                   onClick={()=> handleDeleteUser(data[i].id)}
@@ -26,7 +26,7 @@ export default function EditUsers({data, handleChangeDataUser, handleDeleteUser 
                   <td>{data[i].password}</td>
                   <td>Waiter</td>
                   <td><button
-                  onClick={()=> handleChangeDataUser()}
+                  onClick={()=> handleChangeDataUser(data[i], data[i].role)}
                   >Editar</button></td>
                   <td><button
                   onClick={()=> handleDeleteUser(data[i].id)}
@@ -41,7 +41,7 @@ export default function EditUsers({data, handleChangeDataUser, handleDeleteUser 
                   <td>{data[i].password}</td>
                   <td>Chef</td>
                   <td><button
-                  onClick={()=> handleChangeDataUser()}
+                  onClick={()=> handleChangeDataUser(data[i], data[i].role)}
                   >Editar</button></td>
                   <td><button
                   onClick={()=> handleDeleteUser(data[i].id)}

@@ -15,6 +15,8 @@ const cookies= new Cookies();
 export default function AdminProfile() {
     const [data, setData] = useState([]);
     const [role, setRole] = useState('');
+    const [isPending, setIsPending] = useState(false);
+    const [id, setId] = useState(0);
    
     const [changeData, setChangeData] = useState(
         {
@@ -60,7 +62,7 @@ export default function AdminProfile() {
                 "kitchen": false
             }
         } 
-        if(newRole === 'chef') {
+        if(newRole === 'kitchen') {
             objRole = {
                 "admin":false,
                 "waiter": false,
@@ -82,10 +84,25 @@ export default function AdminProfile() {
         setData([]);
     }
     
-    const handleChangeDataUser = (id, element) => {
-        updateElements('users', id, { ...element })
-         setData([]);
-        Swal.fire(`El rol de usuario ha sido modificado`)
+    const handleChangeDataUser = (newData, newRole) => {
+        // updateElements('users', id, { ...element })
+        // setData([]);
+        let valuesObj = Object.values(newRole);
+        
+        let indexTrue = valuesObj.indexOf(true);
+        let keysObj= Object.keys(newRole);
+        let newNewRole = keysObj[indexTrue];
+        
+        console.log('newData', newData.email)
+        console.log('newRole', newRole)
+        console.log('newnwRole', newNewRole)
+        setChangeData({...changeData, "name": newData.name, "email": newData.email,"password": newData.password, "role":newRole })
+        setRole(newNewRole);
+        setId(newData.id)
+        setIsPending(true)
+        // setRole(handleChangeRole(newRole))
+
+        console.log('changedata',changeData);
     }
     const handleResetUser=() => {
         setRole('');
@@ -112,6 +129,13 @@ export default function AdminProfile() {
         getElements('users').then((data) => setData(data));
     }
     
+    const handleUpdateUser = (id, newBody) => {
+        console.log('id-newbody', id, newBody)
+        updateElements("users", id, newBody);
+        setData([])
+        setIsPending(false)
+
+    }
     /*
     const handleChangeChef = () => {
         getElements('users').then((data) => setData(data.filter((element) => element.role.admin === 'false')))
@@ -128,7 +152,7 @@ export default function AdminProfile() {
                 onClick={Logout}>cerrar sesion</button>
             </div>
             <div className="container-orden">
-                <CreateUsers handleCreateUser={handleCreateUser} handleChangeName={handleChangeName} changeData={changeData} handleChangeEmail={handleChangeEmail} handleChangePassword={handleChangePassword} handleChangeRole={handleChangeRole} role={role} handleResetUser={handleResetUser} />
+                <CreateUsers handleCreateUser={handleCreateUser} handleChangeName={handleChangeName} changeData={changeData} handleChangeEmail={handleChangeEmail} handleChangePassword={handleChangePassword} handleChangeRole={handleChangeRole} role={role} handleResetUser={handleResetUser} handleChangeDataUser={handleChangeDataUser} isPending={isPending} handleUpdateUser={handleUpdateUser} id={id}/>
                 <EditUsers data={data} handleChangeDataUser={handleChangeDataUser} handleDeleteUser={handleDeleteUser}/>
                 
             </div>
