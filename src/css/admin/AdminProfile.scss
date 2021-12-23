@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap');
+
+$color-btn-letra: #E6CCB2;
+$color-borde-btn: rgba(122, 63, 37, 0.81);
+$shadow-btn: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+.btn-menu-admin{
+    width: 256px;
+    height: 80px;
+    border-radius: 20px;
+    border: 5px solid $color-borde-btn;
+    background-color: $color-borde-btn;
+    font-family: 'Rum Raisin', sans-serif;
+    font-size: 36px;
+    margin:0;
+    color: $color-btn-letra;
+    box-shadow: $shadow-btn;
+}
+
+
+

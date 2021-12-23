@@ -1,4 +1,5 @@
 import CreateProducts from "./CreateProducts";
+import '../css/admin/AdminProfile.scss';
 import EditProducts from '../components/EditProducts';
 import { useState, useEffect } from 'react';
 import {

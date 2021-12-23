@@ -11,9 +11,11 @@ export default function EditUsers({data, handleChangeDataUser, handleDeleteUser 
                   <td>{data[i].password}</td>
                   <td>Admin</td>
                   <td><button
+                  className="btn-edit-product"
                   onClick={()=> handleChangeDataUser(data[i], data[i].role)}
                   >Editar</button></td>
                   <td><button
+                  className="btn-delete-product"
                   onClick={()=> handleDeleteUser(data[i].id)}
                   >Borrar</button></td>
                 </tr>
@@ -26,9 +28,11 @@ export default function EditUsers({data, handleChangeDataUser, handleDeleteUser 
                   <td>{data[i].password}</td>
                   <td>Waiter</td>
                   <td><button
+                  className="btn-edit-product"
                   onClick={()=> handleChangeDataUser(data[i], data[i].role)}
                   >Editar</button></td>
                   <td><button
+                  className="btn-delete-product"
                   onClick={()=> handleDeleteUser(data[i].id)}
                   >Borrar</button></td>
                 </tr>
@@ -41,9 +45,11 @@ export default function EditUsers({data, handleChangeDataUser, handleDeleteUser 
                   <td>{data[i].password}</td>
                   <td>Chef</td>
                   <td><button
+                  className="btn-edit-product"
                   onClick={()=> handleChangeDataUser(data[i], data[i].role)}
                   >Editar</button></td>
                   <td><button
+                  className="btn-delete-product"
                   onClick={()=> handleDeleteUser(data[i].id)}
                   >Borrar</button></td>
                 </tr>
@@ -54,7 +60,7 @@ export default function EditUsers({data, handleChangeDataUser, handleDeleteUser 
     
     return(
         <>
-            <table>
+            <table className="table-update-Products">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -69,7 +75,7 @@ export default function EditUsers({data, handleChangeDataUser, handleDeleteUser 
                   {users}  
                 </tbody>
             </table>
-            <hr/>
+            
     
         </>
     )

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rum+Raisin&display=swap');
+
+$color-background: #DDB892;
+$color-bc-inputs: #E6CCB2;
+$color-border-inputs: #8D563A;
+$color-bc-btn: #7A3F25;
+$color-border-form: #650002;
+$shadow-btn: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+.containerInputs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-createElements{
+    width: 100%;
+    border: 2px solid $color-border-inputs;
+    border-radius: 20px;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    font-family: 'Rum Raisin', cursive;
+    h1{
+        margin: 5px 0;
+        font-size: 40px;
+    }
+}
+
+input, select {
+    border-radius: 10px;
+    background-color: $color-bc-inputs;
+    border: 1px solid $color-border-inputs;
+    margin: 4px auto 20px;
+    font-family: 'Hind Madurai', sans-serif;
+    text-align: center;
+    width: 16%;
+    padding: 5px;
+    font-size: 20px;
+    display:inline-block;
+    color:grey;
+}
+
+.btn-menu-add, .btn-menu-update{
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 18px;
+    width: 16%;
+    height: fit-content;
+    margin: 2px auto 20px;
+    border-radius: 10px;
+    box-shadow:$shadow-btn;
+    border:none;
+    background-color:$color-border-inputs;
+    color: white;
+}
+.btn-menu-add:active, .btn-menu-update:active {
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: translateY(3px);
+}

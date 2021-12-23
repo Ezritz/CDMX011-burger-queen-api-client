@@ -25,9 +25,11 @@ export default function AdminProfile() {
             </div>
             <div className="container-orden">
                 <button
+                className="btn-menu-admin"
                 onClick={()=> setActiveMenu('users')}
                 >Usuarios</button>
                 <button
+                className="btn-menu-admin"
                 onClick={()=> setActiveMenu('products')}
                 >Productos</button>
                 

@@ -1,4 +1,4 @@
-
+import '../css/admin/EditProducts.scss';
 
 export default function EditProducts({data, handleChangeDataProduct, handleDeleteProduct}) {
 
@@ -14,9 +14,11 @@ export default function EditProducts({data, handleChangeDataProduct, handleDelet
                 <td>{data[i].type}</td>
                 
                 <td><button
+                className="btn-edit-product"
                 onClick={()=> handleChangeDataProduct(data[i])}
                 >Editar</button></td>
                 <td><button
+                className="btn-delete-product"
                 onClick={()=> handleDeleteProduct(data[i].id)}
                 >Borrar</button></td>
             </tr>
@@ -27,7 +29,7 @@ export default function EditProducts({data, handleChangeDataProduct, handleDelet
 
     return(
         <>
-            <table>
+            <table className="table-update-Products">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -42,8 +44,6 @@ export default function EditProducts({data, handleChangeDataProduct, handleDelet
                   {products}  
                 </tbody>
             </table>
-            <hr/>
-    
         </>
     )
 }
