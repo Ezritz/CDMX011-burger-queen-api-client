@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function CreateUsers({handleCreateUser, handleChangeName,handleChangeEmail, handleChangePassword, handleChangeRole, changeData, role, handleResetUser}) {
+export default function CreateUsers({handleCreateUser, handleChangeName,handleChangeEmail, handleChangePassword, handleChangeRole, changeData, role, handleResetUser, isPending, handleUpdateUser, id}) {
     
 
     return(
@@ -32,13 +32,22 @@ export default function CreateUsers({handleCreateUser, handleChangeName,handleCh
             <option value="" disabled>Selecciona una opcion</option>
             <option value="admin">Admin</option>
             <option value="waiter">Mesero</option>
-            <option value="chef">Cocinero</option>
+            <option value="kitchen">Cocinero</option>
             </select> <br/>
-            <button
-            onClick={()=> {handleCreateUser()
+            {!isPending && 
+                <button
+                onClick={()=> {handleCreateUser()
+                    handleResetUser()}
+                }
+                >Agregar Usuario</button>}
+            {isPending && <button 
+                onClick={()=> {handleUpdateUser(id, changeData)
                 handleResetUser()}
             }
-            >Agregar Usuario</button>
+            >Actualizar</button>}
+            
+            
+
         </div>
     )
 }
