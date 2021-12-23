@@ -1,4 +1,4 @@
-export default function EditUsers({data, handleChangeDataUser }) {
+export default function EditUsers({data, handleChangeDataUser, handleDeleteUser }) {
     
     let users = [];
     
@@ -13,7 +13,9 @@ export default function EditUsers({data, handleChangeDataUser }) {
                   <td><button
                   onClick={()=> handleChangeDataUser()}
                   >Editar</button></td>
-                  <td><button>Borrar</button></td>
+                  <td><button
+                  onClick={()=> handleDeleteUser(data[i].id)}
+                  >Borrar</button></td>
                 </tr>
             )
         } else if(data[i].role.waiter === true){
@@ -26,7 +28,9 @@ export default function EditUsers({data, handleChangeDataUser }) {
                   <td><button
                   onClick={()=> handleChangeDataUser()}
                   >Editar</button></td>
-                  <td><button>Borrar</button></td>
+                  <td><button
+                  onClick={()=> handleDeleteUser(data[i].id)}
+                  >Borrar</button></td>
                 </tr>
             )
         } else {
@@ -36,8 +40,12 @@ export default function EditUsers({data, handleChangeDataUser }) {
                   <td>{data[i].email}</td>
                   <td>{data[i].password}</td>
                   <td>Chef</td>
-                  <td><button>Editar</button></td>
-                  <td><button>Borrar</button></td>
+                  <td><button
+                  onClick={()=> handleChangeDataUser()}
+                  >Editar</button></td>
+                  <td><button
+                  onClick={()=> handleDeleteUser(data[i].id)}
+                  >Borrar</button></td>
                 </tr>
             )
         }
