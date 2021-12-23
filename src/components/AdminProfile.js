@@ -6,7 +6,7 @@ import CreateUsers from '../components/CreateUsers'
 import Cookies from 'universal-cookie';
 import { Logout } from '../lib/fakeServer';
 import {
-    getElements, updateElements, createElements
+    getElements, updateElements, createElements, deleteElements
 } from '../crud';
 import Swal from 'sweetalert2'
 
@@ -105,6 +105,13 @@ export default function AdminProfile() {
         getElements('users').then((data) => setData(data));
 
     },[data]);
+
+    const handleDeleteUser = (id) => {
+        console.log(id)
+        deleteElements("users", id)
+        getElements('users').then((data) => setData(data));
+    }
+    
     /*
     const handleChangeChef = () => {
         getElements('users').then((data) => setData(data.filter((element) => element.role.admin === 'false')))
@@ -121,8 +128,8 @@ export default function AdminProfile() {
                 onClick={Logout}>cerrar sesion</button>
             </div>
             <div className="container-orden">
-                <CreateUsers handleCreateUser={handleCreateUser} handleChangeName={handleChangeName} changeData={changeData} handleChangeEmail={handleChangeEmail} handleChangePassword={handleChangePassword} handleChangeRole={handleChangeRole} role={role} handleResetUser={handleResetUser}/>
-                <EditUsers data={data} handleChangeDataUser={handleChangeDataUser}/>
+                <CreateUsers handleCreateUser={handleCreateUser} handleChangeName={handleChangeName} changeData={changeData} handleChangeEmail={handleChangeEmail} handleChangePassword={handleChangePassword} handleChangeRole={handleChangeRole} role={role} handleResetUser={handleResetUser} />
+                <EditUsers data={data} handleChangeDataUser={handleChangeDataUser} handleDeleteUser={handleDeleteUser}/>
                 
             </div>
             

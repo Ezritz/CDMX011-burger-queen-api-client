@@ -7,7 +7,7 @@ export default async function generalFetch({path, method, body}) {
             "Accept": "application/json"
         }
     })
-    console.log('res: ',res);
+    
     return res.json();
 }
 
