@@ -19,7 +19,7 @@ export default function Lunch({handleAddProduct, handleReduceProduct}) {
         image={element.image}
         name={element.name}
         price={element.price}
-        productId={element._id}
+        productId={element.id}
         handleAddProduct={handleAddProduct}
         handleReduceProduct={handleReduceProduct}
         className={"image-drinks"} width={'48px'}/>
@@ -31,7 +31,7 @@ export default function Lunch({handleAddProduct, handleReduceProduct}) {
         image={element.image}
         name={element.name}
         price={element.price}
-        productId={element._id}
+        productId={element.id}
         handleAddProduct={handleAddProduct}
         handleReduceProduct={handleReduceProduct}
         className={"image-drinks"} width={'30px'}/>
@@ -43,7 +43,7 @@ export default function Lunch({handleAddProduct, handleReduceProduct}) {
         image={element.image}
         name={element.name}
         price={element.price}
-        productId={element._id}
+        productId={element.id}
         handleAddProduct={handleAddProduct}
         handleReduceProduct={handleReduceProduct}
         className={"image-drinks"} width={'46px'}/>

@@ -18,7 +18,7 @@ export async function Login (email, password) {
         if(userEmail.length <= 0) {
             Swal('email incorrecto')
         } else if(userPassword <= 0){
-            Swal('Contrasenña incorrecta')
+            Swal('Contraseña incorrecta')
         }
         console.log(userPassword)
         let userLogin = userPassword[0];

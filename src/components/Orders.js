@@ -28,7 +28,7 @@ export default function Orders() {
   
   // const [clientName, setClientName] = usestate('');
   const [otraOrden, setOtraOrden] = useState({
-    "_id": "",
+    "id": "",
     "userId": "",
     "status": "pending",
     "dateEntry": new Date(),
@@ -38,7 +38,7 @@ export default function Orders() {
 
   const handleResetComanda=() => {
     setOtraOrden({
-      "_id": "",
+      "id": "",
       "userId": "",
       "status": "pending",
       "dateEntry": new Date(),
@@ -64,20 +64,27 @@ export default function Orders() {
   
 
   const handleAddProduct = (id) => {
-    
-    let exist= otraOrden.products.find((elem) => elem._id === id);
+   
+    let exist= otraOrden.products.find((elem) => {
+      // console.log('elem.id',elem.id);
+      return elem._id === id});
+     // console.log('existe', exist)
     if(exist) {
       exist.qty +=1;
       setOtraOrden({...otraOrden,products:[...otraOrden.products]});
     } else {
-      let prod = menu.products.find(elem => elem._id === id);
+      let prod = menu.products.find(elem => {
+        return elem._id === id});
       setOtraOrden({...otraOrden,products:[...otraOrden.products,{...prod, qty:1}]});
       
     }
    
   }
   const handleReduceProduct= (id) => {
-    let exist= otraOrden.products.find((elem) => elem._id === id);
+    let exist= otraOrden.products.find((elem) => {
+      
+      return elem._id === id});
+      console.log('existe reduce', exist)
     if(exist && exist.qty >1) {
       exist.qty -=1;
       setOtraOrden({...otraOrden,products:[...otraOrden.products]});
@@ -86,10 +93,12 @@ export default function Orders() {
       setOtraOrden({...otraOrden, products:otraOrden.products.filter(elem => elem._id !== id)})
     }
     console.log('resta', otraOrden);
+
   }
 
   const handleRemoveProduct = (id) => {
-    let exist= otraOrden.products.find((elem) => elem._id === id);
+    let exist= otraOrden.products.find((elem) => {
+      return elem._id === id});
     if(exist) {
       setOtraOrden({...otraOrden, products:otraOrden.products.filter(elem => elem._id !== id)})
     }

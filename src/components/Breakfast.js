@@ -22,7 +22,7 @@ export default  function Breakfast({handleAddProduct, handleReduceProduct}) {
       price={element.price}
       id={"image-food"}
       width={'50px'}
-      productId={element._id}
+      productId={element.id}
       handleAddProduct={handleAddProduct}
       handleReduceProduct={handleReduceProduct}
     />
@@ -34,7 +34,7 @@ export default  function Breakfast({handleAddProduct, handleReduceProduct}) {
       image={element.image}
       name={element.name}
       price={element.price}
-      productId={element._id} 
+      productId={element.id} 
       handleAddProduct={handleAddProduct} className={"image-drinks"} width={'48px'}
       handleReduceProduct={handleReduceProduct} />
   });
